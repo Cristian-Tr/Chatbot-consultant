@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Consultant Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <script src="chatbot.js"></script>
+</head>
+
+<body>
+
+    <header class="py-3 shadow-sm bg-white sticky-top">
+        <h1 class="text-center h4 mb-0" style="color: #003366; letter-spacing: 2px;">CHATBOT CONSULTANT</h1>
+    </header>
+
+    <div class="carousel-container position-relative overflow-hidden">
+        <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+
+        <div class="carousel-slide d-flex" id="carouselSlide" style="width: 300%; transition: transform 0.5s ease;">
+            <img src="1.png" alt="Fabrică" style="width: 33.333%; object-fit: cover;">
+            <img src="2.png" alt="Betonieră" style="width: 33.333%; object-fit: cover;">
+            <img src="3.png" alt="Șantier" style="width: 33.333%; object-fit: cover;">
+        </div>
+
+        <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <section class="cta-section bg-primary text-white py-5 text-center" style="background-color: #003366 !important;">
+        <div class="container">
+            <h2 class="fw-bold">CONSULTANȚĂ TEHNICĂ</h2>
+            <p class="lead">"Chatbot Consultant oferă suport tehnic clienților ajutându-i să facă alegerea corectă a
+                produselor."</p>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h2 class="text-center mb-5" style="color: #003366;">PRODUSE</h2>
+        <div class="row g-3 text-center justify-content-center">
+            <div class="col-6 col-md-3">
+                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
+                    <img src="11.png" alt="Ciment" class="img-fluid rounded mb-2"
+                        style="aspect-ratio: 1/1; object-fit: cover;">
+                    <h3 class="h6 mb-0">Ciment</h3>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
+                    <img src="12.png" alt="Beton" class="img-fluid rounded mb-2"
+                        style="aspect-ratio: 1/1; object-fit: cover;">
+                    <h3 class="h6 mb-0">Beton</h3>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
+                    <img src="13.png" alt="Mortar" class="img-fluid rounded mb-2"
+                        style="aspect-ratio: 1/1; object-fit: cover;">
+                    <h3 class="h6 mb-0">Mortar</h3>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
+                    <img src="14.png" alt="Agregate" class="img-fluid rounded mb-2"
+                        style="aspect-ratio: 1/1; object-fit: cover;">
+                    <h3 class="h6 mb-0">Agregate</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-5" style="margin-bottom: 150px;">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+                <div class="col">
+                    <h4 class="h6 text-uppercase fw-bold mb-3"
+                        style="border-bottom: 2px solid #4CAF50; display: inline-block; padding-bottom: 5px;">
+                        PRODUSE</h4>
+                    <ul class="list-unstyled mt-2">
+                        <li>Produse</li>
+                        <li>Media</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4 class="h6 text-uppercase fw-bold mb-3"
+                        style="border-bottom: 2px solid #4CAF50; display: inline-block; padding-bottom: 5px;">
+                        COMPANIE</h4>
+                    <ul class="list-unstyled mt-2">
+                        <li>Companie</li>
+                        <li>Echipa</li>
+                        <li>Cariere</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4 class="h6 text-uppercase fw-bold mb-3"
+                        style="border-bottom: 2px solid #4CAF50; display: inline-block; padding-bottom: 5px;">
+                        MEDIA</h4>
+                    <ul class="list-unstyled mt-2">
+                        <li>Proiecte</li>
+                        <li>Soluții</li>
+                        <li>Fabrici</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center opacity-50">
+
+                    <small>&copy; 2026 Chatbot Consultant Project. Toate drepturile rezervate.</small><br>
+                    <small>&copy;
+                        CHATBOT CONSULTANT este un website demonstrativ din portofoliul Cristian T.!<br>
+                        Marca si produsele prezentate sunt imaginare!<br>
+                    </small>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+
+
+    <div id="chat-widget">
+        <div id="chat-trigger">
+            <div class="head">
+                <div class="head-bg"></div>
+                <div class="eye-l">
+                    <div class="iris"></div>
+                </div>
+                <div class="eye-r">
+                    <div class="iris"></div>
+                </div>
+                <div class="mouth"></div>
+            </div>
+            <div id="heart-container" class="animated-text">
+                Bună! Sunt consultantul tehnic HB. <br>
+                Vrei să te ajut să alegi produsele potrivite pentru proiectul tău?
+            </div>
+            <div class="d-flex justify-content-center gap-2 mt-2">
+                <button class="btn btn-sm btn-primary py-0" onclick="startWithChoice('Da')"
+                    style="font-size: 0.7rem; background-color: #003366; border: 1px solid gold;">DA</button>
+                <button class="btn btn-sm btn-outline-secondary py-0" onclick="startWithChoice('Nu')"
+                    style="font-size: 0.7rem; color: #003366; border: 1px solid #003366;">NU</button>
+            </div>
+        </div>
+
+        <div id="chat-window">
+            <div class="minimize-btn" onclick="toggleChat()">🔽</div>
+            <div id="display"></div>
+        </div>
+    </div>
+
+
+    <script>
+        let currentSlide = 0;
+        const slide = document.getElementById('carouselSlide');
+        const totalSlides = 3;
+
+        function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            const offset = -(currentSlide * (100 / totalSlides));
+            slide.style.transform = `translateX(${offset}%)`;
+        }
+        setInterval(() => moveSlide(1), 5000);
+    </script>
+</body>
+
+</html>

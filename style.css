@@ -1,0 +1,97 @@
+/* Containerul trebuie sa aiba o inaltime clara si pozitie relativa */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    /* Pe desktop */
+    min-height: 300px;
+    overflow: hidden;
+    background-color: #eee;
+    /* Fundal pana se incarca imaginile */
+}
+
+/* Fix pentru Mobil */
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 30vh;
+        /* Mai mic pe mobil, dar fix */
+        min-height: 200px;
+    }
+}
+
+/* Butoanele: Fortam centrarea verticala */
+.carousel-btn {
+    position: absolute;
+    top: 50% !important;
+    /* Fortam 50% din inaltimea containerului */
+    transform: translateY(-50%) !important;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    /* Dimensiunea ceruta de tine */
+    color: #003366;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    /* Inaltime fixa pentru buton ca sa fie usor de apasat */
+}
+
+.carousel-btn.prev {
+    left: 5px;
+}
+
+.carousel-btn.next {
+    right: 5px;
+}
+
+/* Asiguram ca imaginile umplu tot containerul */
+.carousel-slide img {
+    width: 33.333%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-wrapper {
+    transition: transform 0.2s;
+}
+
+.product-wrapper:hover {
+    transform: scale(1.03);
+}
+
+/* Forțăm imaginile să fie pătrate indiferent de fișierul original */
+.product-wrapper img {
+    width: 100%;
+    max-width: 150px;
+    /* Limită pentru a nu deveni gigantice pe tablete */
+    margin: 0 auto;
+    display: block;
+}
+
+@media (max-width: 576px) {
+    .product-wrapper h3 {
+        font-size: 0.85rem;
+        /* Text puțin mai mic pe ecrane foarte mici */
+    }
+}
+
+footer {
+    width: 100%;
+    margin-top: 50px;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+footer ul li:hover {
+    color: #4CAF50;
+}
