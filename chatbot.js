@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Trecem la întrebarea despre locație
             setTimeout(() => {
                 window.step = "next_action";
-                addBotMessage("Dorești să afli unde poți găsi produsele noastre?", ["CIMENT", "BETON", "AGREGATE"]);
-            }, 88);
+                addBotMessage("Dorești să afli unde poți găsi produsele noastre? <br> Selectează produsul dorit!", ["CIMENT", "BETON", "AGREGATE"]);
+            }, 817);
         }
         // PASUL 3: Direcționare către Contact
         else if (window.step === "next_action") {
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 window.step = "ask_restart";
                 addBotMessage("Doriți detalii pentru alt proiect?", ["DA", "NU"]);
-            }, 4444);
+            }, 1871);
         }
         // PASUL 4: Restart sau Final
         else if (window.step === "ask_restart") {
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     "ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"
                 ]);
             } else {
-                addBotMessage("Vă mulțumim frumos pentru că ne-ați vizitat!");
+                addBotMessage("VĂ MULȚUMIM FRUMOS PENTRU CĂ NE-AȚI VIZITAT!");
                 window.step = "start";
                 setTimeout(toggleChat, 2518);
             }
