@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 window.step = "next_action";
                 addBotMessage("Dorești să afli unde poți găsi produsele noastre? <br> Selectează produsul dorit!", ["CIMENT", "BETON", "AGREGATE"]);
-            }, 817);
+            }, 1871);
         }
         // PASUL 3: Direcționare către Contact
         else if (window.step === "next_action") {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 addBotMessage("VĂ MULȚUMIM FRUMOS PENTRU CĂ NE-AȚI VIZITAT!");
                 window.step = "start";
-                setTimeout(toggleChat, 2518);
+                setTimeout(toggleChat, 3418);
             }
         }
     };
