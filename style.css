@@ -13,7 +13,7 @@
 /* Fix pentru Mobil */
 @media (max-width: 768px) {
     .carousel-container {
-        height: 30vh;
+        height: 17vh;
         /* Mai mic pe mobil, dar fix */
         min-height: 200px;
     }
@@ -60,7 +60,7 @@
 }
 
 .product-wrapper:hover {
-    transform: scale(1.03);
+    transform: scale(1.07);
 }
 
 /* Forțăm imaginile să fie pătrate indiferent de fișierul original */
@@ -93,5 +93,5 @@ footer ul li {
 }
 
 footer ul li:hover {
-    color: #4CAF50;
+    color: red;
 }

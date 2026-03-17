@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (window.step === "start") {
             if (choiceLow === "da") {
                 window.step = "project_type";
-                addBotMessage("Excelent! Ce include proiectul tău?", [
-                    "Alei/Garaje", "Fundație/Scară", "Placă/Centură", "Stâlpi/Grinzi", "Zidărie/Tencuială"
+                addBotMessage("Ce include proiectul tău?", [
+                    "ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"
                 ]);
             } else {
-                addBotMessage("Nicio problemă! Dacă te răzgândești, sunt aici.");
+                addBotMessage("Vă mulțumim frumos pentru că ne-ați vizitat!! Dacă vă răzgândiți, sunt aici.");
                 // Închidem automat după un scurt mesaj de refuz
-                setTimeout(toggleChat, 2000);
+                setTimeout(toggleChat, 2518);
             }
         }
         // PASUL 2: Selecție tip proiect
@@ -43,13 +43,13 @@ document.addEventListener('DOMContentLoaded', function () {
             // Trecem la întrebarea despre locație
             setTimeout(() => {
                 window.step = "next_action";
-                addBotMessage("Dorești să afli unde poți găsi produsele noastre?", ["Ciment", "Beton", "Agregate"]);
-            }, 1500);
+                addBotMessage("Dorești să afli unde poți găsi produsele noastre?", ["CIMENT", "BETON", "AGREGATE"]);
+            }, 88);
         }
         // PASUL 3: Direcționare către Contact
         else if (window.step === "next_action") {
             let info = "";
-            if (choiceLow.includes("ciment")) info = "Poți cumpăra saci cu ciment în magazinele și depozitele cu materiale de construcții din localitatea ta! Trimite-ne te rog datele tale în secțiunea Contact și te vom contacta noi pentru a-ți oferi detalii suplimentare!";
+            if (choiceLow.includes("ciment")) info = "Poți cumpăra ciment din magazinele și depozitele cu materiale de construcții din localitatea ta! Trimite-ne te rog datele tale în secțiunea Contact și te vom contacta noi pentru a-ți oferi detalii suplimentare!";
             else if (choiceLow.includes("beton")) info = "Poți cumpăra betonul dorit din stațiile noastre de betoane. Trimite-ne te rog datele tale în secțiunea Contact și te vom contacta noi pentru a-ți oferi detalii suplimentare!";
             else if (choiceLow.includes("agregate")) info = "Poți cumpăra agregate din stațiile noastre de concasare. Trimite-ne te rog datele tale în secțiunea Contact și te vom contacta noi pentru a-ți oferi detalii suplimentare!";
 
@@ -58,21 +58,21 @@ document.addEventListener('DOMContentLoaded', function () {
             // Întrebarea de restart finală
             setTimeout(() => {
                 window.step = "ask_restart";
-                addBotMessage("Dorești detalii pentru alt proiect?", ["DA", "NU"]);
-            }, 3500);
+                addBotMessage("Doriți detalii pentru alt proiect?", ["DA", "NU"]);
+            }, 4444);
         }
         // PASUL 4: Restart sau Final
         else if (window.step === "ask_restart") {
             if (choiceLow === "da") {
                 clearChat();
                 window.step = "project_type";
-                addBotMessage("Excelent! Ce include proiectul tău?", [
-                    "Alei/Garaje", "Fundație/Scară", "Placă/Centură", "Stâlpi/Grinzi", "Zidărie/Tencuială"
+                addBotMessage("Ce include proiectul tău?", [
+                    "ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"
                 ]);
             } else {
-                addBotMessage("Îți mulțumim frumos că ai vizitat pagina noastră!");
+                addBotMessage("Vă mulțumim frumos pentru că ne-ați vizitat!");
                 window.step = "start";
-                setTimeout(toggleChat, 2500);
+                setTimeout(toggleChat, 2518);
             }
         }
     };
