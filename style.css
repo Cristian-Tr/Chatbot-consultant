@@ -13,7 +13,7 @@
 /* Fix pentru Mobil */
 @media (max-width: 768px) {
     .carousel-container {
-        height: 17vh;
+        height: 15vh;
         /* Mai mic pe mobil, dar fix */
         min-height: 100px;
     }
