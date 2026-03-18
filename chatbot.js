@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             oscillator.type = 'sine'; 
             oscillator.frequency.setValueAtTime(400, audioCtx.currentTime);
-            oscillator.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.08);
+            oscillator.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.1);
             
-            gainNode.gain.setValueAtTime(0.07, audioCtx.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.07, audioCtx.currentTime + 0.08);
+            gainNode.gain.setValueAtTime(0.08, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 0.1);
 
             oscillator.connect(gainNode);
             gainNode.connect(audioCtx.destination);
