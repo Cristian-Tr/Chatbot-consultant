@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             oscillator.start();
             oscillator.stop(audioCtx.currentTime + 0.08);
 
-            setTimeout(() => { audioCtx.close(); }, 170);
+            setTimeout(() => { audioCtx.close(); },350);
         } catch (e) {
             console.log("Audio stins");
         }
@@ -56,10 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
         else if (window.step === "project_type") {
             let recomandare = "";
             if (choiceLow.includes("alei")) recomandare = "Pentru alei sau garaje, recomandăm: <br> <br>  Beton clasa C12/15 (B200) <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
-            else if (choiceLow.includes("fundație")) recomandare = "Pentru fundație sau scară, noi îți recomandăm: <br> <br>  Beton clasa C16/20 (B250). <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
-            else if (choiceLow.includes("placă")) recomandare = "Pentru placă sau centură, noi îți recomandăm: <br> <br>  Beton clasa C16/20 (B250). <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
-            else if (choiceLow.includes("stâlpi")) recomandare = "Pentru stâlpi sau grinzi, noi îți recomandăm: <br> <br>  Beton clasa C20/25 (B300). <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
-            else if (choiceLow.includes("zidărie")) recomandare = "Pentru zidărie sau tencuială, noi îți recomandăm: <br> <br>  Ciment special și agregat fin 0-4 mm. <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
+            else if (choiceLow.includes("fundație")) recomandare = "Pentru fundație sau scară, noi îți recomandăm: <br> <br>  Beton clasa C16/20 (B250) <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
+            else if (choiceLow.includes("placă")) recomandare = "Pentru placă sau centură, noi îți recomandăm: <br> <br>  Beton clasa C16/20 (B250) <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
+            else if (choiceLow.includes("stâlpi")) recomandare = "Pentru stâlpi sau grinzi, noi îți recomandăm: <br> <br>  Beton clasa C20/25 (B300) <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
+            else if (choiceLow.includes("zidărie")) recomandare = "Pentru zidărie sau tencuială, noi îți recomandăm: <br> <br>  Ciment special și agregat fin 0-4 mm <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
 
             addBotMessage(recomandare);
 
