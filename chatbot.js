@@ -14,16 +14,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
             oscillator.type = 'sine'; 
             oscillator.frequency.setValueAtTime(400, audioCtx.currentTime);
-            oscillator.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.1);
+            oscillator.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.08);
             
-            gainNode.gain.setValueAtTime(0.2, audioCtx.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
+            gainNode.gain.setValueAtTime(0.07, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.07, audioCtx.currentTime + 0.08);
 
             oscillator.connect(gainNode);
             gainNode.connect(audioCtx.destination);
 
             oscillator.start();
-            oscillator.stop(audioCtx.currentTime + 0.1);
+            oscillator.stop(audioCtx.currentTime + 0.08);
 
             setTimeout(() => { audioCtx.close(); }, 170);
         } catch (e) {
@@ -45,46 +45,46 @@ document.addEventListener('DOMContentLoaded', function () {
         if (window.step === "start") {
             if (choiceLow === "da") {
                 window.step = "project_type";
-                addBotMessage("Ce include astăzi proiectul tău?", [
+                addBotMessage("🏗️ <br> Ce include astăzi proiectul tău?", [
                     "ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"
                 ]);
             } else {
-                addBotMessage("Vă mulțumim frumos pentru vizită!");
-                setTimeout(toggleChat, 3500);
+                addBotMessage("<br> <br> 🤗 <br> Îți mulțumim frumos pentru că ai vizitat astăzi pagina noastră!");
+                setTimeout(toggleChat, 5300);
             }
         }
         else if (window.step === "project_type") {
             let recomandare = "";
-            if (choiceLow.includes("alei")) recomandare = "Pentru alei sau garaje, recomandăm **Beton clasa C12/15 (B200). <br> <br> Dacă dorești detalii suplimentare trimite-ne datele tale în secțiunea Contact și te vom ajuta cu drag!**";
-            else if (choiceLow.includes("fundație")) recomandare = "Pentru fundație sau scară, recomandăm **Beton clasa C16/20 (B250). <br> <br> Dacă dorești detalii suplimentare trimite-ne datele tale în secțiunea Contact și te vom ajuta cu drag!**";
-            else if (choiceLow.includes("placă")) recomandare = "Pentru placă sau centură, recomandăm **Beton clasa C16/20 (B250). <br> <br> Dacă dorești detalii suplimentare trimite-ne datele tale în secțiunea Contact și te vom ajuta cu drag!**";
-            else if (choiceLow.includes("stâlpi")) recomandare = "Pentru stâlpi sau grinzi, recomandăm **Beton clasa C20/25 (B300). <br> <br> Dacă dorești detalii suplimentare trimite-ne datele tale în secțiunea Contact și te vom ajuta cu drag!**";
-            else if (choiceLow.includes("zidărie")) recomandare = "Pentru zidărie sau tencuială, recomandăm **Ciment special și agregat fin 0-4 mm. <br> <br> Dacă dorești detalii suplimentare trimite-ne datele tale în secțiunea Contact și te vom ajuta cu drag!**";
+            if (choiceLow.includes("alei")) recomandare = "Pentru alei sau garaje, recomandăm: <br> <br>  Beton clasa C12/15 (B200) <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
+            else if (choiceLow.includes("fundație")) recomandare = "Pentru fundație sau scară, noi îți recomandăm: <br> <br>  Beton clasa C16/20 (B250). <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
+            else if (choiceLow.includes("placă")) recomandare = "Pentru placă sau centură, noi îți recomandăm: <br> <br>  Beton clasa C16/20 (B250). <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
+            else if (choiceLow.includes("stâlpi")) recomandare = "Pentru stâlpi sau grinzi, noi îți recomandăm: <br> <br>  Beton clasa C20/25 (B300). <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
+            else if (choiceLow.includes("zidărie")) recomandare = "Pentru zidărie sau tencuială, noi îți recomandăm: <br> <br>  Ciment special și agregat fin 0-4 mm. <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
 
             addBotMessage(recomandare);
 
             setTimeout(() => {
                 window.step = "next_action";
-                addBotMessage("Dorești să afli de unde poți cumpăra produsele noastre? <br> <br> Selectează te rog unul dintre produsele de mai jos:", ["CIMENT", "BETON", "AGREGATE"]);
-            }, 3500); // TIMING INAINTE DE URMATOAREA INTREBARE
+                addBotMessage("Dorești să afli de unde poți achiziționa produsele noastre? <br> <br> Selectează te rog unul dintre produsele din lista de mai jos:", ["CIMENT", "BETON", "AGREGATE"]);
+            }, 5300); // TIMING INAINTE DE URMATOAREA INTREBARE
         }
         else if (window.step === "next_action") {
-            let info = " Dacă dorești detalii suplimentare trimite-ne datele tale în secțiunea Contact și te vom ajuta cu drag!";
+            let info = " Poți achiziționa produsele noastre chiar din localitatea ta. <br> <br> 📋 <br> Te rugăm să completezi datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag să afli toate detaliile!";
             addBotMessage(info);
 
             setTimeout(() => {
                 window.step = "ask_restart";
-                addBotMessage("Dorești detalii pentru alt proiect?", ["DA", "NU"]);
-            }, 3500); // TIMING
+                addBotMessage("🏗️ <br> Dorești detalii pt. alt proiect?", ["DA", "NU"]);
+            }, 5300); // TIMING
         }
         else if (window.step === "ask_restart") {
             if (choiceLow === "da") {
                 window.step = "project_type";
-                addBotMessage("Ce include noul tău proiect?", ["ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"]);
+                addBotMessage("🏗️ <br> Ce include noul tău proiect?", ["ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"]);
             } else {
-                addBotMessage("Îți mulțumim frumos pentru vizita de astăzi!");
+                addBotMessage("Îți mulțumim frumos pentru că ai vizitat astăzi pagina noastră! <br> <br> Dacă mai ai nevoie de alte materiale pentru proiectele tale ne găsești aici. <br> <br> 🤗 <br> Te așteptăm cu drag să ne vizitezi din nou!");
                 window.step = "start";
-                setTimeout(toggleChat, 2500); // TIMING
+                setTimeout(toggleChat, 4400); // TIMING
             }
         }
     };
