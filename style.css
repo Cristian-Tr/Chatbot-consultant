@@ -15,7 +15,7 @@
     .carousel-container {
         height: 15vh;
         /* Mai mic pe mobil, dar fix */
-        min-height: 200px;
+        min-height: 250px;
     }
 }
 
