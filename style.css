@@ -1,4 +1,21 @@
-/* Containerul trebuie sa aiba o inaltime clara si pozitie relativa */
+
+/* --- EFECT FADE IN LA INTRAREA PE SITE --- */
+@keyframes fadeInEfect {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header, main {
+    animation: fadeInEfect 1s ease-out;
+}
+
+/* CONTAINER CU POZITIE RELATIVA */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -10,7 +27,7 @@
     /* Fundal pana se incarca imaginile */
 }
 
-/* Fix pentru Mobil */
+/* RESPONSIVE WEB DESIGN - MOBIL */
 @media (max-width: 768px) {
     .carousel-container {
         height: 20vh;
@@ -19,25 +36,23 @@
     }
 }
 
-/* Butoanele: Fortam centrarea verticala */
+/* CENTRARE VERTICALA BUTOANE */
 .carousel-btn {
     position: absolute;
     top: 50% !important;
-    /* Fortam 50% din inaltimea containerului */
+    /* DIMENSIUNE 50% din inaltimea containerului */
     transform: translateY(-50%) !important;
     background: rgba(255, 255, 255, 0.4);
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     font-size: 0.8rem;
-    /* Dimensiunea ceruta de tine */
     color: #003366;
     z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 40px;
-    /* Inaltime fixa pentru buton ca sa fie usor de apasat */
 }
 
 .carousel-btn.prev {
@@ -48,7 +63,6 @@
     right: 5px;
 }
 
-/* Asiguram ca imaginile umplu tot containerul */
 .carousel-slide img {
     width: 33.333%;
     height: 100%;
@@ -63,11 +77,11 @@
     transform: scale(1.07);
 }
 
-/* Forțăm imaginile să fie pătrate indiferent de fișierul original */
+/* IMAGINI PATRATE INDIFERENT DE FORMA LOR ORIGINALA */
 .product-wrapper img {
     width: 100%;
     max-width: 150px;
-    /* Limită pentru a nu deveni gigantice pe tablete */
+    /* RWD MOBIL */
     margin: 0 auto;
     display: block;
 }
@@ -75,7 +89,7 @@
 @media (max-width: 576px) {
     .product-wrapper h3 {
         font-size: 0.85rem;
-        /* Text puțin mai mic pe ecrane foarte mici */
+        /* RWD MOBIL */
     }
 }
 
@@ -95,3 +109,4 @@ footer ul li {
 footer ul li:hover {
     color: red;
 }
+
