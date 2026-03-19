@@ -30,10 +30,10 @@
 }
 
 .head-bg {
-    border-radius: 35% 35% 44% 44%;
+    border-radius: 21% 21% 44% 44%;
     width: 100%;
     height: 100%;
-    background: #ffa500;
+    background: dodgerblue;
     position: relative;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
@@ -113,7 +113,7 @@
 }
 
 .mouth {
-    border-bottom: 5px solid red;
+    border-bottom: 5px solid orangered;
     border-radius: 0 0 53px 53px;
     height: 10px;
     position: absolute;
