@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const TIMEOUT_MS = 8000; 
     window.step = "start";
 
-    // --- 1. SUNET ---
+
+    // --- 1. SUNET LA CLICK BUTOANE ---
     function playBubbleSound() {
         try {
             const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } catch (e) { }
     }
 
-    // --- 2. GESTIONARE TIMEOUT ---
+    // --- 2. TIMEOUT ---
     function stopTimer() {
         if (inactivityTimer) clearTimeout(inactivityTimer);
         if (progressInterval) clearInterval(progressInterval);
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         progressInterval = null;
     }
 
+    
     function startInactivityTimeout() {
         stopTimer();
         let timeLeft = TIMEOUT_MS;
