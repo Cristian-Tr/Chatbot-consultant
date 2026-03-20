@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- 4. LOGICA CONVERSAȚIEI ---
     function showWelcomeMenu() {
         window.step = "start";
-        addBotMessage("🤖 <br> Bună! <br> Sunt consultantul tehnic CT. <br> Vrei să te ajut să alegi produsele potrivite pentru proiectul tău?", ["DA", "NU"]);
+        addBotMessage("🤖 <br> Bună! <br> Sunt consultantul tehnic CT <br> Vrei să te ajut să alegi produsele potrivite pentru proiectul tău?", ["DA", "NU"]);
     }
 
     window.processStep = function (choice) {
@@ -116,11 +116,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         else if (window.step === "project_type") {
             let recomandare = "";
-            if (choiceLow.includes("alei")) recomandare = "Pentru alei/garaje recomandăm: <br> <b>C12/15 (B200)</b>.";
-            else if (choiceLow.includes("fundație")) recomandare = "Pentru fundații recomandăm: <br> <b>C16/20 (B250)</b>.";
-            else if (choiceLow.includes("placă")) recomandare = "Pentru placă/centură recomandăm: <br> <b>C16/20 (B250)</b>.";
-            else if (choiceLow.includes("stâlpi")) recomandare = "Pentru stâlpi/grinzi recomandăm: <br> <b>C20/25 (B300)</b>.";
-            else if (choiceLow.includes("ziduri")) recomandare = "Pentru zidărie/tencuială recomandăm: <br> <b>Ciment special</b>.";
+            if (choiceLow.includes("alei")) recomandare = "Pentru alei/garaje recomandăm: <br> <b>C12/15 (B200)</b>";
+            else if (choiceLow.includes("fundație")) recomandare = "Pentru fundații recomandăm: <br> <b>C16/20 (B250)</b>";
+            else if (choiceLow.includes("placă")) recomandare = "Pentru placă/centură recomandăm: <br> <b>C16/20 (B250)</b>";
+            else if (choiceLow.includes("stâlpi")) recomandare = "Pentru stâlpi/grinzi recomandăm: <br> <b>C20/25 (B300)</b>";
+            else if (choiceLow.includes("ziduri")) recomandare = "Pentru zidărie/tencuială recomandăm: <br> <b>Ciment special</b>";
 
             window.step = "product_selection";
             addBotMessage(`${recomandare} <br> <br> Vrei să afli de unde poți cumpăra produsele noastre? <br> Selectează un produs:`, ["CIMENT", "BETON", "AGREGATE", "CAUT ALTCEVA"]);
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(closeChatUI, 3500);
             } else {
                 window.step = "transport_step";
-                addBotMessage("🏙️ <br> Poți cumpăra produsele noastre chiar din localitatea ta! <br> 📝 <br> Te rugăm să completezi datele tale în secțiunea Contact pentru a-ți oferi toate informațiile! <br> 🚚 <br> Ai nevoie de transport pentru produsele tale?", ["DA", "NU"]);
+                addBotMessage("🏙️ <br> Poți cumpăra produsele noastre chiar din localitatea ta! <br> 📝 <br> Te rugăm să completezi datele tale în secțiunea Contact pentru a-ți oferi informații utile! <br> 🚚 <br> Ai nevoie de transport pentru produsele tale?", ["DA", "NU"]);
             }
         }
         else if (window.step === "transport_step") {
