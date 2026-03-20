@@ -2,6 +2,7 @@
 /* =========================================
    1. FUNDAL ȘI WIDGET CONTAINER
    ========================================= */
+
 #chat-widget {
     position: fixed;
     bottom: 1px;
@@ -26,6 +27,7 @@
 /* =========================================
    2. CHATBOT
    ========================================= */
+
 .head {
     margin: 8px auto;
     width: 71px;
@@ -106,6 +108,7 @@
 /* =========================================
    3. FEREASTRA DE CHAT ȘI DISPLAY
    ========================================= */
+
 #chat-window {
     display: none;
     width: 332px;
@@ -159,6 +162,7 @@
 /* =========================================
    5. ANIMAȚII GÂNDIRE (ROBOT + VALURI)
    ========================================= */
+
 .typing-container {
     display: flex;
     flex-direction: column;
@@ -192,6 +196,7 @@
 /* =========================================
    6. MESAJE ȘI BUTOANE (UI)
    ========================================= */
+
 .bot-msg {
     color: #333;
     font-size: 1.1rem;
@@ -231,6 +236,7 @@
 /* =========================================
    7. KEYFRAMES (ANIMAȚII)
    ========================================= */
+   
 @keyframes move-head {
     0%, 100% { transform: rotate(0deg); }
     50% { transform: rotate(-3deg); }
