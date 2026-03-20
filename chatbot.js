@@ -2,43 +2,104 @@ document.addEventListener('DOMContentLoaded', function () {
     const display = document.getElementById('display');
     const windowChat = document.getElementById('chat-window');
     const trigger = document.getElementById('chat-trigger');
+    const timeoutBar = document.getElementById('timeout-bar');
 
+    let inactivityTimer = null;
+    let progressInterval = null;
+    const TIMEOUT_MS = 8000; 
     window.step = "start";
 
-    // --- FUNCȚIA PENTRU SUNETUL BUBBLE POP ---
+    // --- 1. SUNET ---
     function playBubbleSound() {
         try {
             const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             const oscillator = audioCtx.createOscillator();
             const gainNode = audioCtx.createGain();
-
-            oscillator.type = 'sine'; 
+            oscillator.type = 'sine';
             oscillator.frequency.setValueAtTime(400, audioCtx.currentTime);
             oscillator.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.08);
-            
             gainNode.gain.setValueAtTime(0.01, audioCtx.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.08);
-
             oscillator.connect(gainNode);
             gainNode.connect(audioCtx.destination);
-
             oscillator.start();
             oscillator.stop(audioCtx.currentTime + 0.08);
-
-            setTimeout(() => { audioCtx.close(); },350);
-        } catch (e) {
-            console.log("Audio stins");
-        }
+            setTimeout(() => { audioCtx.close(); }, 350);
+        } catch (e) { }
     }
 
-    // 1. START CHAT
-    window.startWithChoice = function (choice) {
-        playBubbleSound();
-        toggleChat();
-        processStep(choice);
-    };
+    // --- 2. GESTIONARE TIMEOUT ---
+    function stopTimer() {
+        if (inactivityTimer) clearTimeout(inactivityTimer);
+        if (progressInterval) clearInterval(progressInterval);
+        if (timeoutBar) timeoutBar.style.width = "100%";
+        inactivityTimer = null;
+        progressInterval = null;
+    }
 
-    // 2. LOGICA DECIZII UTILIZATOR
+    function startInactivityTimeout() {
+        stopTimer();
+        let timeLeft = TIMEOUT_MS;
+        progressInterval = setInterval(() => {
+            timeLeft -= 100;
+            let widthPercent = (timeLeft / TIMEOUT_MS) * 100;
+            if (timeoutBar) timeoutBar.style.width = widthPercent + "%";
+        }, 100);
+
+        inactivityTimer = setTimeout(() => {
+            if (window.step === "start") {
+                closeChatUI();
+            } else {
+                showWelcomeMenu();
+            }
+        }, TIMEOUT_MS);
+    }
+
+    // --- 3. AFIȘARE MESAJE ---
+    function addBotMessage(text, options = []) {
+        stopTimer();
+        playBubbleSound();
+
+        display.innerHTML = `
+            <div class="typing-container">
+                <div class="robot-thinking">🤖</div>
+                <div class="typing-loader">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>`;
+
+        setTimeout(() => {
+            display.innerHTML = '';
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'bot-msg';
+            msgDiv.innerHTML = `<div style="margin-bottom: 15px;">${text}</div>`;
+
+            if (options && options.length > 0) {
+                options.forEach((opt, index) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'quiz-option';
+                    btn.style.animation = `fadeInMsg 0.3s ease-out ${index * 0.1}s forwards`;
+                    btn.style.opacity = "0";
+                    btn.textContent = opt;
+                    btn.onclick = (e) => {
+                        e.stopPropagation();
+                        processStep(opt);
+                    };
+                    msgDiv.appendChild(btn);
+                });
+            }
+
+            display.appendChild(msgDiv);
+            display.scrollTop = display.scrollHeight;
+            startInactivityTimeout();
+        }, 1000);
+    }
+
+    // --- 4. LOGICA CONVERSAȚIEI ---
+    function showWelcomeMenu() {
+        window.step = "start";
+        addBotMessage("🤖 <br> Bună! Sunt consultantul tehnic CT. <br> Vrei să te ajut să alegi produsele potrivite pentru proiectul tău?", ["DA", "NU"]);
+    }
+
     window.processStep = function (choice) {
         const choiceLow = choice.toLowerCase();
 
@@ -49,94 +110,86 @@ document.addEventListener('DOMContentLoaded', function () {
                     "ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"
                 ]);
             } else {
-                addBotMessage("<br> <br> 🤗 <br> Îți mulțumim frumos pentru că ai vizitat astăzi pagina noastră!");
-                setTimeout(toggleChat, 5300);
+                addBotMessage("🤗 <br> Vă mulțumim pentru vizită!");
+                setTimeout(closeChatUI, 3500);
             }
         }
         else if (window.step === "project_type") {
             let recomandare = "";
-            if (choiceLow.includes("alei")) recomandare = "Pentru alei sau garaje, recomandăm: <br> <br>  Beton clasa C12/15 (B200) <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
-            else if (choiceLow.includes("fundație")) recomandare = "Pentru fundație sau scară, noi îți recomandăm: <br> <br>  Beton clasa C16/20 (B250) <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
-            else if (choiceLow.includes("placă")) recomandare = "Pentru placă sau centură, noi îți recomandăm: <br> <br>  Beton clasa C16/20 (B250) <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
-            else if (choiceLow.includes("stâlpi")) recomandare = "Pentru stâlpi sau grinzi, noi îți recomandăm: <br> <br>  Beton clasa C20/25 (B300) <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
-            else if (choiceLow.includes("zidărie")) recomandare = "Pentru zidărie sau tencuială, noi îți recomandăm: <br> <br>  Ciment special și agregat fin 0-4 mm <br> <br> 📋 <br> Dacă dorești detalii suplimentare completează datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag!";
+            if (choiceLow.includes("alei")) recomandare = "Pentru alei/garaje recomandăm: <br> <b>C12/15 (B200)</b>.";
+            else if (choiceLow.includes("fundație")) recomandare = "Pentru fundații recomandăm: <br> <b>C16/20 (B250)</b>.";
+            else if (choiceLow.includes("placă")) recomandare = "Pentru placă/centură recomandăm: <br> <b>C16/20 (B250)</b>.";
+            else if (choiceLow.includes("stâlpi")) recomandare = "Pentru stâlpi/grinzi recomandăm: <br> <b>C20/25 (B300)</b>.";
+            else if (choiceLow.includes("ziduri")) recomandare = "Pentru zidărie/tencuială recomandăm: <br> <b>Ciment special</b>.";
 
-            addBotMessage(recomandare);
-
-            setTimeout(() => {
-                window.step = "next_action";
-                addBotMessage("Dorești să afli de unde poți achiziționa produsele noastre? <br> <br> Selectează te rog unul dintre produsele din lista de mai jos:", ["CIMENT", "BETON", "AGREGATE"]);
-            }, 5300); // TIMING INAINTE DE URMATOAREA INTREBARE
+            window.step = "product_selection";
+            addBotMessage(`${recomandare} <br> <br> Vrei să afli de unde poți cumpăra produsele noastre? <br> Selectează un produs:`, ["CIMENT", "BETON", "AGREGATE", "CAUT ALTCEVA"]);
         }
-        else if (window.step === "next_action") {
-            let info = " Poți achiziționa produsele noastre chiar din localitatea ta. <br> <br> 📋 <br> Te rugăm să completezi datele tale în formularul din secțiunea Contact și noi te vom ajuta cu drag să afli toate detaliile!";
-            addBotMessage(info);
-
-            setTimeout(() => {
-                window.step = "ask_restart";
-                addBotMessage("🏗️ <br> Dorești detalii pt. alt proiect?", ["DA", "NU"]);
-            }, 5300); // TIMING
+        else if (window.step === "product_selection") {
+            if (choiceLow === "nu") { showWelcomeMenu(); return; }
+            window.step = "transport_step";
+            addBotMessage("🏙️ <br> Poți cumpăra produsele noastre chiar din localitatea ta! <br> 📝 <br> Te rugăm să completezi datele tale în secțiunea Contact pentru a-ți oferi toate informațiile! <br> 🚚 <br> Ai nevoie de transport pentru produsele tale?", ["DA", "NU"]);
+        }
+        else if (window.step === "transport_step") {
+            window.step = "ask_restart";
+            if (choiceLow === "da") {
+                addBotMessage("📝 <br> Completează datele tale în secțiunea Contact pentru a-ți oferi informații despre serviciile noastre de transport! <br> <br> 🏗️  <br> Dorești detalii pentru alt proiect?", ["DA", "NU"]);
+            } else {
+                addBotMessage("🤗 <br> Îți mulțumim frumos pentru vizită! <br> <br> 🏗️  <br> Dorești detalii pentru un alt proiect?", ["DA", "NU"]);
+            }
         }
         else if (window.step === "ask_restart") {
             if (choiceLow === "da") {
                 window.step = "project_type";
                 addBotMessage("🏗️ <br> Ce include noul tău proiect?", ["ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"]);
             } else {
-                addBotMessage("Îți mulțumim frumos pentru că ai vizitat astăzi pagina noastră! <br> <br> Dacă mai ai nevoie de alte materiale pentru proiectele tale ne găsești aici. <br> <br> 🤗 <br> Te așteptăm cu drag să ne vizitezi din nou!");
-                window.step = "start";
-                setTimeout(toggleChat, 4400); // TIMING
+                addBotMessage("🤗 <br> Îți mulțumim frumos pentru că ne-ai vizitat!");
+                setTimeout(closeChatUI, 2500);
             }
         }
     };
 
-    // 3. FUNCTII INTERFATA
-    function addBotMessage(text, options = []) {
-        // ȘTERGERE MESAJ ANTERIOR INAINTE DE AFISAREA CELUI NOU
-        clearChat(); 
-        
-        playBubbleSound();
-        const msgDiv = document.createElement('div');
-        msgDiv.className = 'bot-msg';
-        msgDiv.innerHTML = `<div>${text}</div>`;
-        
-        if (options.length > 0) {
-            options.forEach(opt => {
-                const btn = document.createElement('button');
-                btn.className = 'quiz-option';
-                btn.textContent = opt;
-                btn.onclick = () => {
-                    playBubbleSound();
-                    processStep(opt);
-                };
-                msgDiv.appendChild(btn);
-            });
-        }
-        display.appendChild(msgDiv);
-        display.scrollTop = 0; // RESETARE SCROLL LA INCEPUT
+    // --- 5. CONTROL INTERFAȚĂ ---
+    function openChatUI() {
+        windowChat.style.display = 'block';
+        trigger.style.display = 'none';
+        showWelcomeMenu();
     }
 
-    function clearChat() {
+    function closeChatUI() {
+        stopTimer();
+        windowChat.style.display = 'none';
+        trigger.style.display = 'block';
         display.innerHTML = '';
+        window.step = "start";
     }
 
     window.toggleChat = function () {
-        const isHidden = (windowChat.style.display === 'none' || windowChat.style.display === '');
-        windowChat.style.display = isHidden ? 'block' : 'none';
-        trigger.style.display = isHidden ? 'none' : 'block';
-        
-        // DACA SE INCHIDE RESETAM CHATUL PENTRU DATA VIITOARE
-        if (!isHidden) clearChat();
+        if (windowChat.style.display === 'none' || windowChat.style.display === '') {
+            openChatUI();
+        } else {
+            closeChatUI();
+        }
     };
 
-    // 4. FUNCTIE URMARIRE CURSOR CU OCHII CATBOT-ULUI
+    window.startWithChoice = function (choice) {
+        if (choice.toLowerCase() === 'da') {
+            openChatUI();
+        }
+    };
+
+    // --- 6. OCHI ---
     document.addEventListener('mousemove', (e) => {
         const irises = document.querySelectorAll(".iris");
-        const x = (e.clientX * 100) / window.innerWidth + "%";
-        const y = (e.clientY * 100) / window.innerHeight + "%";
         irises.forEach(iris => {
-            iris.style.left = x;
-            iris.style.top = y;
-            iris.style.transform = `translate(-${x}, -${y})`;
+            const rect = iris.parentElement.getBoundingClientRect();
+            const eyeX = rect.left + rect.width / 2;
+            const eyeY = rect.top + rect.height / 2;
+            const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
+            const distance = Math.min(rect.width / 4, Math.hypot(e.clientX - eyeX, e.clientY - eyeY) / 15);
+            const moveX = Math.cos(angle) * distance;
+            const moveY = Math.sin(angle) * distance;
+            iris.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
         });
     });
 });
