@@ -6,9 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let inactivityTimer = null;
     let progressInterval = null;
-    const TIMEOUT_MS = 8000; 
+    const TIMEOUT_MS = 8000;
     window.step = "start";
-
 
     // --- 1. SUNET LA CLICK BUTOANE ---
     function playBubbleSound() {
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
         progressInterval = null;
     }
 
-    
     function startInactivityTimeout() {
         stopTimer();
         let timeLeft = TIMEOUT_MS;
@@ -84,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     btn.textContent = opt;
                     btn.onclick = (e) => {
                         e.stopPropagation();
-                        processStep(opt);
+                        window.processStep(opt);
                     };
                     msgDiv.appendChild(btn);
                 });
@@ -99,11 +97,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- 4. LOGICA CONVERSAȚIEI ---
     function showWelcomeMenu() {
         window.step = "start";
-        addBotMessage("🤖 <br> Bună! Sunt consultantul tehnic CT. <br> Vrei să te ajut să alegi produsele potrivite pentru proiectul tău?", ["DA", "NU"]);
+        addBotMessage("🤖 <br> Bună! <br> Sunt consultantul tehnic CT. <br> Vrei să te ajut să alegi produsele potrivite pentru proiectul tău?", ["DA", "NU"]);
     }
 
     window.processStep = function (choice) {
-        const choiceLow = choice.toLowerCase();
+        const choiceLow = choice.toLowerCase().trim();
 
         if (window.step === "start") {
             if (choiceLow === "da") {
@@ -111,9 +109,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 addBotMessage("🏗️ <br> Ce include astăzi proiectul tău?", [
                     "ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"
                 ]);
-            } else {
-                addBotMessage("🤗 <br> Vă mulțumim pentru vizită!");
-                setTimeout(closeChatUI, 3500);
+            } else if (choiceLow === "nu") {
+                addBotMessage("🤗 <br> Îți mulțumim frumos pentru vizită!  <br> <br> Dacă te răzgândești, ne găsești aici sau poți căuta singur produsele dorite! <br> <br> Mult succes cu proiectele tale!");
+                setTimeout(closeChatUI, 4500);
             }
         }
         else if (window.step === "project_type") {
@@ -128,14 +126,19 @@ document.addEventListener('DOMContentLoaded', function () {
             addBotMessage(`${recomandare} <br> <br> Vrei să afli de unde poți cumpăra produsele noastre? <br> Selectează un produs:`, ["CIMENT", "BETON", "AGREGATE", "CAUT ALTCEVA"]);
         }
         else if (window.step === "product_selection") {
-            if (choiceLow === "nu") { showWelcomeMenu(); return; }
-            window.step = "transport_step";
-            addBotMessage("🏙️ <br> Poți cumpăra produsele noastre chiar din localitatea ta! <br> 📝 <br> Te rugăm să completezi datele tale în secțiunea Contact pentru a-ți oferi toate informațiile! <br> 🚚 <br> Ai nevoie de transport pentru produsele tale?", ["DA", "NU"]);
+            // REPARAT AICI: Verificăm dacă utilizatorul a ales "CAUT ALTCEVA"
+            if (choiceLow.includes("caut altceva")) {
+                addBotMessage("🤗 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> Mult succes cu proiectele tale!");
+                setTimeout(closeChatUI, 3500);
+            } else {
+                window.step = "transport_step";
+                addBotMessage("🏙️ <br> Poți cumpăra produsele noastre chiar din localitatea ta! <br> 📝 <br> Te rugăm să completezi datele tale în secțiunea Contact pentru a-ți oferi toate informațiile! <br> 🚚 <br> Ai nevoie de transport pentru produsele tale?", ["DA", "NU"]);
+            }
         }
         else if (window.step === "transport_step") {
             window.step = "ask_restart";
             if (choiceLow === "da") {
-                addBotMessage("📝 <br> Completează datele tale în secțiunea Contact pentru a-ți oferi informații despre serviciile noastre de transport! <br> <br> 🏗️  <br> Dorești detalii pentru alt proiect?", ["DA", "NU"]);
+                addBotMessage("📝 <br> Completează datele tale în secțiunea Contact pentru a-ți oferi informații despre serviciile noastre de transport marfă! <br> <br> 🏗️  <br> Dorești detalii pentru alt proiect?", ["DA", "NU"]);
             } else {
                 addBotMessage("🤗 <br> Îți mulțumim frumos pentru vizită! <br> <br> 🏗️  <br> Dorești detalii pentru un alt proiect?", ["DA", "NU"]);
             }
@@ -145,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.step = "project_type";
                 addBotMessage("🏗️ <br> Ce include noul tău proiect?", ["ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"]);
             } else {
-                addBotMessage("🤗 <br> Îți mulțumim frumos pentru că ne-ai vizitat!");
+                addBotMessage("🤗 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> Mult succes cu proiectele tale!");
                 setTimeout(closeChatUI, 2500);
             }
         }
@@ -153,21 +156,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- 5. CONTROL INTERFAȚĂ ---
     function openChatUI() {
-        windowChat.style.display = 'block';
-        trigger.style.display = 'none';
+        if (windowChat) windowChat.style.display = 'block';
+        if (trigger) trigger.style.display = 'none';
         showWelcomeMenu();
     }
 
     function closeChatUI() {
         stopTimer();
-        windowChat.style.display = 'none';
-        trigger.style.display = 'block';
-        display.innerHTML = '';
+        if (windowChat) windowChat.style.display = 'none';
+        if (trigger) trigger.style.display = 'block';
+        if (display) display.innerHTML = '';
         window.step = "start";
     }
 
     window.toggleChat = function () {
-        if (windowChat.style.display === 'none' || windowChat.style.display === '') {
+        if (!windowChat.style.display || windowChat.style.display === 'none') {
             openChatUI();
         } else {
             closeChatUI();
@@ -177,6 +180,9 @@ document.addEventListener('DOMContentLoaded', function () {
     window.startWithChoice = function (choice) {
         if (choice.toLowerCase() === 'da') {
             openChatUI();
+        } else if (choice.toLowerCase() === 'nu') {
+            openChatUI();
+            window.processStep('NU');
         }
     };
 
