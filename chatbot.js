@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     "ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"
                 ]);
             } else if (choiceLow === "nu") {
-                addBotMessage("🤗 <br> Îți mulțumim frumos pentru vizită!  <br> <br> Dacă te răzgândești, ne găsești aici sau poți căuta singur produsele dorite! <br> <br> Mult succes cu proiectele tale!");
+                addBotMessage("🤗 <br> Îți mulțumim frumos pentru vizită!  <br> <br> Dacă te răzgândești, ne găsești aici! <br> <br> 👍 <br><br> MULT SUCCES!");
                 setTimeout(closeChatUI, 4500);
             }
         }
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
         else if (window.step === "product_selection") {
             // REPARAT AICI: Verificăm dacă utilizatorul a ales "CAUT ALTCEVA"
             if (choiceLow.includes("caut altceva")) {
-                addBotMessage("🤗 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> Mult succes cu proiectele tale!");
+                addBotMessage("🤗 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> 👍 <br><br> MULT SUCCES!");
                 setTimeout(closeChatUI, 3500);
             } else {
                 window.step = "transport_step";
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.step = "project_type";
                 addBotMessage("🏗️ <br> Ce include noul tău proiect?", ["ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"]);
             } else {
-                addBotMessage("🤗 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> Mult succes cu proiectele tale!");
+                addBotMessage("🤗 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> 👍 <br><br> MULT SUCCES!");
                 setTimeout(closeChatUI, 2500);
             }
         }
