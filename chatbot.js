@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- 4. LOGICA CONVERSAȚIEI ---
     function showWelcomeMenu() {
         window.step = "start";
-        addBotMessage(" <br> 🏭 <br> Suntem o companie producătoare de: <br> ciment, agregate, beton și mortar! <br><br> 🧱 <br> Ai nevoie de unul dintre aceste produse pentru proiectele tale?", ["DA", "NU"]);
+        addBotMessage(" <br> 🏭 <br>Suntem un producător de: <br> ciment, agregate, beton și mortar! <br><br> 🧱 <br> Ai nevoie de unul dintre aceste produse pentru proiectele tale?", ["DA", "NU"]);
     }
 
     window.processStep = function (choice) {
