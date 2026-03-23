@@ -1,17 +1,18 @@
-
 /* --- EFECT FADE IN WEBSITE --- */
 @keyframes fadeInEfect {
     from {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-header, main {
+header,
+main {
     animation: fadeInEfect 1s ease-out;
 }
 
@@ -109,4 +110,3 @@ footer ul li {
 footer ul li:hover {
     color: red;
 }
-
