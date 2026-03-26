@@ -5,9 +5,11 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f8f9fa;
     overflow-x: hidden;
+    /*
+    animation: fadeInEfect .8s ease-out forwards; OPTIONAL*/
 }
 
-/* --- EFECT FADE IN LA INTRAREA PE SITE --- */
+/* --- EFECT FADE IN LA INTRAREA PE SITE - OPTIONAL
 @keyframes fadeInEfect {
     from {
         opacity: 0;
@@ -19,6 +21,7 @@ body {
         transform: translateY(0);
     }
 }
+--- */
 
 /* --- PROGRESS BAR --- */
 #progress-container {
