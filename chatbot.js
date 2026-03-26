@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
             else if (choiceLow.includes("ziduri")) recomandare = "Pentru zidărie/tencuială recomandăm: <br> <b>Ciment special</b>";
 
             window.step = "product_selection";
-            addBotMessage(`${recomandare} <br> Vrei să afli de unde poți cumpăra produsele noastre? <br> Selectează un produs:`, ["CIMENT", "AGREGATE", "BETON", "MORTAR", "CAUT ALTCEVA"]);
+            addBotMessage(`${recomandare} <br> Vrei să afli de unde poți cumpăra produsele noastre? <br> Selectează un produs:`, ["CIMENT", "BETON", "MORTAR", "AGREGATE", "CAUT ALTCEVA"]);
         }
         else if (window.step === "product_selection") {
             if (choiceLow.includes("caut altceva")) {
