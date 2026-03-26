@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- 4. LOGICA CONVERSAȚIEI ---
     function showWelcomeMenu() {
         window.step = "start";
-        addBotMessage(" <br> 🏭 <br>Suntem un producător de: <br> ciment, agregate, beton și mortar! <br><br> 🧱 <br> Ai nevoie de unul dintre aceste produse pentru proiectele tale?", ["DA", "NU"]);
+        addBotMessage(" <br> 🏭 <br>Sunt consultantul tehnic al unei companii producătoare de: <br> ciment, agregate, beton și mortar! <br><br> 🧱 <br> Ai nevoie de unul dintre aceste produse pentru proiectele tale?", ["DA", "NU"]);
     }
 
     window.processStep = function (choice) {
@@ -126,7 +126,6 @@ document.addEventListener('DOMContentLoaded', function () {
             addBotMessage(`${recomandare} <br> Vrei să afli de unde poți cumpăra produsele noastre? <br> Selectează un produs:`, ["CIMENT", "AGREGATE", "BETON", "MORTAR", "CAUT ALTCEVA"]);
         }
         else if (window.step === "product_selection") {
-            // REPARAT AICI: Verificăm dacă utilizatorul a ales "CAUT ALTCEVA"
             if (choiceLow.includes("caut altceva")) {
                 addBotMessage("<br> 🤗 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> 🧱 <br> Dacă vei avea nevoie pe viitor de ciment, agregate, beton sau mortar pentru proiectele tale, ne găsești aici! <br> <br> 👍 <br><br> MULT SUCCES!");
                 setTimeout(closeChatUI, 4500);
@@ -185,19 +184,4 @@ document.addEventListener('DOMContentLoaded', function () {
             window.processStep('NU');
         }
     };
-
-    // --- 6. OCHI ---
-    document.addEventListener('mousemove', (e) => {
-        const irises = document.querySelectorAll(".iris");
-        irises.forEach(iris => {
-            const rect = iris.parentElement.getBoundingClientRect();
-            const eyeX = rect.left + rect.width / 2;
-            const eyeY = rect.top + rect.height / 2;
-            const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
-            const distance = Math.min(rect.width / 4, Math.hypot(e.clientX - eyeX, e.clientY - eyeY) / 15);
-            const moveX = Math.cos(angle) * distance;
-            const moveY = Math.sin(angle) * distance;
-            iris.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
-        });
-    });
 });

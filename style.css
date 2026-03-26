@@ -1,112 +1,181 @@
-/* --- EFECT FADE IN WEBSITE --- */
-@keyframes fadeInEfect {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* --- FUNDAL SI BAZA --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
 }
 
-header,
-main {
-    animation: fadeInEfect 1s ease-out;
-}
-
-/* CONTAINER CU POZITIE RELATIVA */
-.carousel-container {
-    position: relative;
+/* --- PROGRESS BAR --- */
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
-    /* Pe desktop */
-    min-height: 300px;
-    overflow: hidden;
-    background-color: white;
-    /* Fundal pana se incarca imaginile */
+    height: 4px;
+    background: transparent;
+    z-index: 9999;
 }
 
-/* RESPONSIVE WEB DESIGN - MOBIL */
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: cyan;
+    box-shadow: 0 0 8px cyan;
+    transition: width 0.1s ease-out;
+}
+
+/* --- CAROUSEL --- */
+.carousel-item {
+    height: 600px !important;
+    overflow: hidden;
+    position: relative;
+    background-color: #000;
+}
+
 @media (max-width: 768px) {
-    .carousel-container {
-        height: 20vh;
-        /* Mai mic pe mobil, dar fix */
-        min-height: 150px;
+    .carousel-item {
+        height: 250px !important;
     }
 }
 
-/* CENTRARE VERTICALA BUTOANE */
-.carousel-btn {
-    position: absolute;
-    top: 50% !important;
-    /* DIMENSIUNE 50% din inaltimea containerului */
-    transform: translateY(-50%) !important;
-    background: rgba(255, 255, 255, 0.4);
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    color: #003366;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-}
-
-.carousel-btn.prev {
-    left: 5px;
-}
-
-.carousel-btn.next {
-    right: 5px;
-}
-
-.carousel-slide img {
-    width: 33.333%;
+.carousel-item img {
     height: 100%;
+    width: 100%;
     object-fit: cover;
+    transition: transform 0.8s ease-in-out;
 }
 
+.carousel-item:hover img {
+    transform: scale(1.1);
+}
+
+.carousel-caption {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: auto;
+    width: 95%;
+    pointer-events: none;
+}
+
+.carousel-text-custom {
+    font-size: 3.5vw !important;
+    white-space: nowrap;
+    color: cyan;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 51, 102, 0.9), -1px -1px 0px #003366, 1px -1px 0px #003366;
+}
+
+@media (min-width: 1200px) {
+    .carousel-text-custom {
+        font-size: 3rem !important;
+    }
+}
+
+/* --- SECTIUNE PRODUSE --- */
 .product-wrapper {
     transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
 }
 
 .product-wrapper:hover {
-    transform: scale(1.07);
+    transform: scale(1.05);
 }
 
-/* IMAGINI PATRATE INDIFERENT DE FORMA LOR ORIGINALA */
-.product-wrapper img {
+.product-img {
     width: 100%;
     max-width: 150px;
-    /* RWD MOBIL */
-    margin: 0 auto;
     display: block;
 }
 
-@media (max-width: 576px) {
-    .product-wrapper h3 {
-        font-size: 0.85rem;
-        /* RWD MOBIL */
-    }
+.btn-group-custom {
+    display: flex;
+    width: 100%;
+    max-width: 160px;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
-footer {
-    width: 100%;
-    margin-top: 50px;
+.btn-left,
+.btn-right {
+    background-color: #003366;
+    color: cyan;
+    border: 1px solid cyan;
+    padding: 8px 0;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.btn-left {
+    flex: 3;
+    border-radius: 6px 0 0 6px;
+}
+
+.btn-right {
+    flex: 1;
+    border-radius: 0 6px 6px 0;
+}
+
+.btn-group-custom:hover .btn-left,
+.btn-group-custom:hover .btn-right {
+    background-color: cyan;
+    color: #003366;
+}
+
+/* --- FORMULAR CONTACT --- */
+.custom-input {
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    resize: none;
+}
+
+.custom-input:focus {
+    border-color: cyan !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 255, 255, 0.1) !important;
+    outline: none;
 }
 
 footer ul li {
     margin-bottom: 8px;
     cursor: pointer;
-    transition: color 0.3s;
-    font-size: 0.9rem;
-    color: #ccc;
+    transition: color 0.3s ease;
+    color: #bbb;
 }
 
 footer ul li:hover {
+    color: red !important;
+}
+
+/* --- FOOTER --- */
+footer ul li:hover {
     color: red;
+    cursor: pointer;
+}
+
+/* SPATIU INTRE SECTIUNI */
+@media (max-width: 991px) {
+    .order-2 {
+        margin-top: 3rem;
+    }
+}
+
+/* EFECT HOVER */
+button:hover {
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+    filter: brightness(1.2);
+}
+
+/* CAMPURI INPUT */
+.custom-input {
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    resize: none;
 }
