@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background-color: white;
+    background-color: rgba(245, 245, 245, 0.78);
     overflow-x: hidden;
 }
 
@@ -179,3 +179,41 @@ button:hover {
     transition: all 0.3s ease;
     resize: none;
 }
+
+
+.news-letter {
+  margin-top: -28px;
+}
+
+.news-letter input[type="email"] {
+  width: 53%;
+  background-color: white;
+  color: cyan;
+  padding: 8px;
+  border-radius: 8px 0 0 8px;
+  border: 2px solid cyan;
+}
+
+@media only screen and (min-width: 768px) {
+  .news-letter input[type="email"] {
+    width: 35%;
+  }
+}
+
+.news-letter input[type="submit"] {
+  width: 25%;
+  background-color: #003388;
+  color: cyan;
+  font-size: 1rem;
+  padding: 8px;
+  border-radius: 0 8px 8px 0;
+  border: 2px solid cyan;
+  margin-left: -3px;
+}
+
+@media only screen and (min-width: 768px) {
+  .news-letter input[type="submit"] {
+    width: 17%;
+  }
+}
+

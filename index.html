@@ -24,7 +24,7 @@
                 <div class="col-12 text-center">
                     <h1 class="mb-0 d-flex align-items-center justify-content-center" style="color: cyan; letter-spacing: 1px; font-weight: 800; 
                            /* VALORI MOBIL: min .8rem, preferat 3vw, max 1.7rem */
-                           font-size: clamp(1rem, 4vw, 1.7rem); text-transform: uppercase;">
+                           font-size: clamp(.8rem, 4vw, 1.7rem); text-transform: uppercase;">
                         C H A T B O T
                         <img src="robohead.png" alt="Robot" style="width: clamp(30px, 8vw, 50px); height: clamp(30px, 8vw, 50px); 
                                border-radius: 50%; margin: 0 10px; object-fit: cover; border: 2px solid cyan;">
@@ -151,20 +151,20 @@
                         <h3 class="mb-4 fw-bold" style="color: #003388;">Trimite un mesaj</h3>
                         <form action="#" onsubmit="return false;">
                             <div class="mb-3">
-                                <label class="form-label fw-semibold">Nume Complet</label>
+                                <h5 class="form-label fw-semibold">👤 Nume</h5>
                                 <input type="text" class="form-control custom-input" placeholder="Nume si prenume"
                                     onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label fw-semibold">Email</label>
+                                <h5 class="form-label fw-semibold">📧 Email</h5>
                                 <input type="email" class="form-control custom-input" placeholder="nume@email.com"
                                     onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label fw-semibold">Mesaj</label>
+                                <h5 class="form-label fw-semibold">✉ Mesaj</h5>
                                 <textarea class="form-control custom-input" rows="4" placeholder="Mesajul tău..."
                                     onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')"></textarea>
-                            </div>
+                            </div><br>
                             <div class="text-center mt-4">
                                 <button type="button" class="btn fw-bold px-5 py-2"
                                     style="background-color: #003388; color: cyan; border: 2px solid cyan; border-radius: 8px;"
@@ -181,29 +181,38 @@
                         <h3 class="fw-bold mb-4" style="color: #003388;">Unde ne găsiți?</h3>
 
                         <div class="mb-4">
-                            <h5 class="fw-bold mb-1">📧 Email departament suport:</h5>
+                            <h5 class="fw-semibold mb-1">📧 Email depart. suport</h5>
                             <p class="text-muted">contact@chatbot-consultant-CT.ro</p>
                         </div>
 
                         <div class="mb-4">
-                            <h5 class="fw-bold mb-1">🏢 Adresă sediu central:</h5>
+                            <h5 class="fw-semibold mb-1">🏢 Adresă sediu central</h5>
                             <p class="text-muted">Strada Chatbot, Nr. 1, București</p>
                         </div>
 
                         <div class="mb-4">
-                            <h5 class="fw-bold mb-1">🏭 Adresă fabrică ciment:</h5>
+                            <h5 class="fw-semibold mb-1">🏭 Adresă fabrică ciment</h5>
                             <p class="text-muted">Zona Industrială, strada Chatbot</p>
                         </div>
 
                         <div class="mb-4">
-                            <h5 class="fw-bold mb-1">📞 Telefon sediu central:</h5>
+                            <h5 class="fw-semibold mb-1">📞 Telefon sediu central</h5>
                             <p class="text-muted">+40 123 456 789</p>
                         </div>
 
-                        <div class="mb-0">
-                            <h5 class="fw-bold mb-1">🕒 Program de lucru:</h5>
-                            <p class="text-muted">Luni - Vineri: 08:00 - 17:00</p>
-                        </div>
+
+                        
+        </h5><br>
+       <div class="mb-4">
+        <h5 style="font-weight: 500; margin-top: 8px;">
+          Aboneaza-te la Newsletter</h5>
+        <form class="news-letter" style="margin-top: 17px; color: gold;">
+          <input class="text-center" type="email" name="news-email" id="news-email" placeholder="nume@email.com"
+            onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
+          <input type="submit" value="TRIMITE" onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
+        </form>
+        </div>
+
                     </div>
                 </div>
             </div>
