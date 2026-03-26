@@ -3,25 +3,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #f8f9fa;
+    background-color: white;
     overflow-x: hidden;
-    /*
-    animation: fadeInEfect .8s ease-out forwards; OPTIONAL*/
 }
-
-/* --- EFECT FADE IN LA INTRAREA PE SITE - OPTIONAL
-@keyframes fadeInEfect {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
---- */
 
 /* --- PROGRESS BAR --- */
 #progress-container {
@@ -101,7 +85,7 @@ body {
 }
 
 .product-wrapper:hover {
-    transform: scale(1.05);
+    transform: scale(1.07);
 }
 
 .product-img {

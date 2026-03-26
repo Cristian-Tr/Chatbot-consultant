@@ -17,7 +17,7 @@
     width: 95vw;
     max-width: 350px;
     padding: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -30,8 +30,9 @@
 .chatbot-text {
     font-weight: bold;
     color: cyan;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-shadow: #003388 .8px .8px .8px;
+    margin-bottom: 12px;
 }
 
 /* =========================================
@@ -56,18 +57,18 @@
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid cyan;
+    border: 1.7px solid cyan;
     box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
 }
 
 /* ANIMATIE PLUTIRE SI ROTATIE */
 @keyframes floating-anim {
     0% {
-        transform: translateY(0px) rotate(0deg);
+        transform: translateY(0px);
     }
 
     100% {
-        transform: translateY(-10px) rotate(3deg);
+        transform: translateY(-10px);
     }
 }
 
