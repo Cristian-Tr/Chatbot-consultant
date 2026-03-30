@@ -116,11 +116,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         else if (window.step === "project_type") {
             let recomandare = "";
-            if (choiceLow.includes("alei")) recomandare = "Pentru alei/garaje eu recomand: <br> <b>C12/15 (B200)</b>";
-            else if (choiceLow.includes("fundație")) recomandare = "Pentru fundații recomandăm: <br> <b>C16/20 (B250)</b>";
-            else if (choiceLow.includes("placă")) recomandare = "Pentru placă/centură recomandăm: <br> <b>C16/20 (B250)</b>";
-            else if (choiceLow.includes("stâlpi")) recomandare = "Pentru stâlpi/grinzi recomandăm: <br> <b>C20/25 (B300)</b>";
-            else if (choiceLow.includes("ziduri")) recomandare = "Pentru zidărie/tencuială recomandăm: <br> <b>Ciment special</b>";
+            if (choiceLow.includes("alei")) recomandare = "Pentru alei/garaje recomand: <br> <b>C12/15 (B200)</b>";
+            else if (choiceLow.includes("fundație")) recomandare = "Pentru fundații recomand: <br> <b>C16/20 (B250)</b>";
+            else if (choiceLow.includes("placă")) recomandare = "Pentru placă/centură recomand: <br> <b>C16/20 (B250)</b>";
+            else if (choiceLow.includes("stâlpi")) recomandare = "Pentru stâlpi/grinzi recomand: <br> <b>C20/25 (B300)</b>";
+            else if (choiceLow.includes("ziduri")) recomandare = "Pentru zidărie/tencuială recomand: <br> <b>Ciment special</b>";
 
             window.step = "products_selection";
             addBotMessage(`${recomandare} <br> Dorești detalii despre unul din produsele de mai jos? <br> Selectează un produs: <br> `, ["CIMENT", "BETON", "MORTAR", "AGREGATE", "CAUT ALTCEVA"]);
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(closeChatUI, 4500);
             } else {
                 window.step = "services_step";
-                addBotMessage("📝 <br> Completează formularul de Contact pentru a primi info solicitate! <br> Dorești detalii despre unul din serviciile de mai jos? <br> Selectează un serviciu: <br> ", ["PROIECTARE", "SUPORT", "TRANSPORT", "ÎNCHIRIERE", "CAUT ALTCEVA"]);
+                addBotMessage("📝 <br> Completează formularul de Contact pt. a primi info solicitate! <br> Dorești detalii despre unul din serviciile de mai jos? <br> Selectează un serviciu: <br> ", ["PROIECTARE", "SUPORT", "TRANSPORT", "ÎNCHIRIERE", "CAUT ALTCEVA"]);
             }
         }
         else if (window.step === "services_step") {
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 addBotMessage("<br> 🤗 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> ℹ️ <br> Dorești detalii pentru un alt proiect?", ["DA", "NU"]);
             }
             else  {
-                addBotMessage("📝 <br> Completează formularul de Contact pentru a primi info solicitate! <br> <br> ℹ️ <br> Dorești detalii pentru alt proiect?", ["DA", "NU"]);
+                addBotMessage("📝 <br> Completează formularul de Contact pt. a primi info solicitate! <br> <br> ℹ️ <br> Dorești detalii pentru alt proiect?", ["DA", "NU"]);
             } 
         }
         else if (window.step === "ask_restart") {
