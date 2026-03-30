@@ -1,284 +1,402 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 
 <head>
     <meta charset="UTF-8">
-    <title>Nobilio Delicate</title>
-    <meta name="Email-Newsletter" content="Landing page & Newsletter" />
-    <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CT Chatbot</title>
+    <meta name="description" content="eCommerce Landing page, Chatbot consultant">
+    <link rel="canonical" href="https://cristian-tr.github.io/Chatbot-consultant/">
+    <meta property="og:title" content="Proiect realizat pe GitHub">
+    <meta property="og:description" content="Vezi detalii in contul meu: github.com/Cristian-Tr">
+    <meta property="og:type" content="profile">
+    <meta name="robots" content="index, follow">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Segoe UI" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="chatbot.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Cristian Tr",
+      "jobTitle": "Analist IT", 
+      "url": "https://cristian-tr.github.io/Chatbot-consultant/",
+      "sameAs": ["https://github.com/Cristian-Tr/"]
+    }
+    </script>
 </head>
 
 <body>
 
-    <div class="jumbotron text-center">
+    <!-- SECTIUNE PROGRESS BAR -->
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
 
-        <!-- Header -->
-        <header>
+    <!-- HEADER CU TITLU WEBSITE -->
+    <header class="py-3 shadow-sm sticky-top" style="background-color: #003388 !important;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="mb-0 d-flex align-items-center justify-content-center" style="color: cyan; letter-spacing: 1px; font-weight: 800; 
+                           /* VALORI MOBIL: min .8rem, preferat 3vw, max 1.7rem */
+                           font-size: clamp(.8rem, 4vw, 1.7rem); text-transform: uppercase;">
+                        C H A T B O T
+                        <img src="robohead.png" alt="Robot" style="width: clamp(30px, 8vw, 50px); height: clamp(30px, 8vw, 50px); 
+                               border-radius: 50%; margin: 0 10px; object-fit: cover; border: 2px solid cyan;">
+                        CONSULTANT
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
 
-            <div class="col-sm-12 col-12" class="container-fluid align-items-center">
-                <img src="./coroana.png" class="crown" alt="sigla Nobilio" style="margin-top: -14px; width: 71px;">
-                <h2 style="margin-top: 1px;">
-                    NOBILIO DELICATE
-                </h2>
-                <h4 style="margin-top: -10px; color: magenta;">
-                    vinuri fara alcool
-                </h4>
-                <h5 style="margin-top: -5px;">
-                </h5><br>
+    <!-- CAROUSEL CU 3 IMAGINI -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="1.png" class="d-block w-100" alt="Fabrică">
+                <div class="carousel-caption">
+                    <h2 class="carousel-text-custom">Fabrici cu tehnologii avansate</h2>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="2.png" class="d-block w-100" alt="Transport">
+                <div class="carousel-caption">
+                    <h2 class="carousel-text-custom">Mijloace de transport moderne</h2>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="3.png" class="d-block w-100" alt="Voluntariat">
+                <div class="carousel-caption">
+                    <h2 class="carousel-text-custom">Voluntariat în comunitatea locală</h2>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
 
-                <!-- CAROUSEL -->
-                <div class="row" class="container-fluid align-items-center">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- SECTIUNE PREZENTARE -->
+    <section class="py-5 text-center text-white" style="background-color: #003388 !important;">
+        <div class="container">
 
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img src="./hotel.png" alt="promotion Nobilio">
-                                <div class="carousel-caption">
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <img src="./promotion.png" alt="hotel Nobilio">
-                                <div class="carousel-caption">
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <img src="./reception.png" alt="hotel Nobilio">
-                                <div class="carousel-caption">
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <img src="./factory.png" alt="reception Nobilio">
-                                <div class=" carousel-caption">
-                                </div>
-                            </div>
-
-                            <!-- Left and right controls -->
-                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-
-                            <!-- Left and right controls -->
-                            <a href="#myCarousel" data-slide="prev" class="btn btn-outline-secondary btn-sm"
-                                style="color: red; font-size: large;">&#10094;</a>
-                            <a href="#myCarousel" data-slide="next" class="btn btn-outline-secondary btn-sm"
-                                style="color: red; font-size: large;">&#10095;</a>
-
-                        </div>
-                    </div>
-
-                    <!-- IMAGE PROMOTION 
-                        <img src="./promotion.png" class="picture-header" alt="promo saptamanala"><br><br>
-                        -->
-                    <a href="https://cristian-tr.github.io/Cristian-T-Portfolio/" target="_blank"
-                        style="background: magenta; padding: 12px;color: #ffffff; font-family: sans-serif; font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none; display: block; border-radius: 35px; font-weight: bold; width: 250px; margin: auto; margin-bottom: 53px;">
-                        Viziteaza magazinul nostru</a>
-
-                           <a href="https://cristian-tr.github.io/Cristian-T-Portfolio/"
-                style="font-size: 1.4rem; background-color: cyan; border-radius: 17px; color: red; font-weight: 800; padding: 1px 8px 1px 8px; text-decoration: none;">
+            <a href="https://cristian-tr.github.io/Cristian-T-Portfolio/"
+                style="font-size: 1rem; background-color: cyan; border-radius: 17px; color: red; font-weight: 800; padding-left: 17px; padding-right: 17px; text-decoration: none;">
                 CRISTIAN T <img src="my-picture.jpg" alt="Robot" style="width: clamp(35px, 8vw, 53px); height: clamp(35px, 8vw, 53px); 
                                border-radius: 50%; margin-bottom: 8px; object-fit: cover; border: 2px solid cyan;">
                 PORTFOLIO</a><br>
-            <h4 style="color: magenta; padding: 8px;" >Email Newsletter este un website demo din portofoliul Cristian T.</h4><br><br>
-                </div>
+            <p class="lead" style="color: cyan;">Chatbot Consultant este un website demo din portofoliul
+                Cristian T.</p>
+        </div>
+    </section>
 
-        </header>
-
-
-        <section>
-
-
-
-            <div class="col-sm-12" class="container-fluid align-items-center">
-
-                <h3>
-                    PACHETE SPECIALE
-                    <br><br>
-                </h3>
-
-                <div class="col-sm-6 col-xs-12">
-                    <img src="pack-1.png" class="pack" alt="pachet special" border="0">
-                    <h5>
-                        NOBILIO SWEET<br> ★★★★★ 4.9 <br><br> vin fara alcool<br>
-                        
-                    </h5><br><br><br>
-
-                </div>
-
-                <div class="col-sm-6 col-xs-12">
-                    <img src="pack-2.png" class="pack" alt="pachet special" border="0">
-                    <h5>
-                        NOBILIO FIZZY<br>  ★★★★☆ 4.1 <br><br> vin fara alcool<br>
-                       
-                    </h5><br><br><br>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-sm-12" class="container-fluid align-items-center">
-                <h3>
-                    SELECTIE VINURI
-                </h3><br>
-
-                <div class="col-sm-4 col-xs-12">
-                    <img src="vin-rosu.png" width="71%" alt="pachet special" border="0">
-                    <h5>
-                        NOBILIO MILD<br>Cabernet<br> ★★★★☆ 4.1
-                    </h5>
-                    <h5>vin fara alcool</h5><br><br><br>
-
-                </div>
-
-                <div class="col-sm-4 col-xs-12">
-
-                    <img src="vin-alb.png" width="71%" alt="pachet special" border="0">
-                    <h5>
-                        NOBILIO SOFT<br>Chardonnay<br> ★★★★☆ 3.9
-                    </h5>
-                    <h5>vin fara alcool</h5><br><br><br>
-
-                </div>
-
-                <div class="col-sm-4 col-xs-12">
-
-                    <img src="vin-spumant.png" width="71%" alt="pachet special" border="0">
-                    <h5>
-                        NOBILIO BUBBLY<br>Merlot<br> ★★★★★ 4.9
-                    </h5>
-                    <h5>vin fara alcool</h5><br><br><br>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-sm-12" class="container-fluid align-items-center">
-                <h3>
-                    VINURI DE COLECTIE
-                    <br><br>
-                </h3>
-
-                <img src="./oferta.png" class="picture-footer" alt="promotion" border="0"><br><br>
-                <a href="https://cristian-tr.github.io/Cristian-T-Portfolio/" target="_blank"
-                    style="background: magenta; padding: 12px;color: #ffffff; font-family: sans-serif; font-size: 12px; line-height: 12px; text-align: center; text-decoration: none; display: block; border-radius: 35px; font-weight: bold; margin: auto; width: 250px;">
-                    Vezi produsele</a>
-            </div>
-
-        </section>
-
-
-        <footer>
-
-            <div class="col-sm-12" style="margin-top: 35px; margin-bottom: 35px;"
-                class="container-fluid align-items-center">
-                <h3>
-                    RECOMANDARI
-                </h3>
-
-                <div class="col-sm-6 col-xs-12">
-                    <h4 style="color: magenta;">
-                        Salata din fructe cu vin Nobilio!
-                    </h4><br>
-                    <img src="./salata.png" width="53%" alt="salata de fructe"><br>
-                    <h5 style="color: springgreen;">Ingrediente: portocale, zmeura, capsuni, kiwi, afine, struguri,
-                        banane, compot de ananas.<br>
-                        Se amesteca ingredientele apoi se stropesc cu putin vin fara alcool Nobilio.
-                    </h5>
-                </div>
-
-                <div class="col-sm-6 col-xs-12">
-                    <h4 style="color: magenta;">
-                        Viziteaza Crama Nobilio!
-                    </h4><br>
-                    <img src="./crama.png" width="53%" alt="salata de fructe"><br>
-                    <h5 style="color: springgreen;">Descriere: Crama Nobilio este construita din piatra poroasa
-                        ventilata
-                        natural.<br>
-                        Aceasta crama
-                        adaposteste delicioasele noastre vinuri fara alcool.
-                    </h5>
-                </div>
-
-            </div>
-
-            <div class="col-sm-12" style="margin-top: 35px; margin-bottom: 35px;"
-                class="container-fluid align-items-center">
-
-                <img src="./podgorie.png" class="picture-footer" alt="salata de fructe"><br>
-            </div>
-            <h5 style="color: springgreen;">
-                Vino la noi ca sa admiri natura creata de Dumnezeu <br>
-                si sa participi la o degustare de vinuri fara alcool, <br>
-                produse din struguri alesi cu grija din podgoriile noastre!
-            </h5><br>
-            <div class="col-sm-12" class="container-fluid align-items-center"><br>
-                <img src="coroana.png" class="crown" alt="alt_text" style="width: 53px;"><br>
-
-                <h5 style="margin-top: 3px;">
-                    NOBILIO DELICATE<br><br><br>
-
-                    <div class="col-sm-12 text-center">
-                        <div class="logo-bar">
-                            <a href="#" class="face"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="inst"><i class="fa fa-instagram"></i></a>
-                            <a href="#" class="yout"><i class="fa fa-youtube"></i></a>
-                            <a href="#" class="link"><i class="fa fa-linkedin"></i></a>
-                            <a href="#" class="twit"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="pint"><i class="fa fa-pinterest"></i></a>
-                        </div>
-                    </div><br><br><br>
-
-                    <h4 style="color: fuchsia;">
-                        LANDING PAGE & NEWSLETTER<br>
-                        using the same design
-                    </h4><br>
-
-                    <div class="row mt-4">
-                        <img src="my-picture.jpg" alt="Robot" style="width: clamp(30px, 8vw, 50px); height: clamp(30px, 8vw, 50px); 
-                               border-radius: 50%; margin: 0 10px; object-fit: cover; border: 2px solid cyan;"><br>
-                        <a href="https://cristian-tr.github.io/Cristian-T-Portfolio/"
-                            style="font-size: 1rem; background-color: cyan; border-radius: 17px; color: red; font-weight: 800; padding-left: 17px; padding-right: 17px; text-decoration: none;">
-                            CRISTIAN T - PORTFOLIO</a><br>
-                        <small>&copy; 2026 Landing Page & Email Newsletter project</small><br>
-                            Marcile si produsele prezentate sunt fictive!<br>
-                        </small>
+    <!-- SECTIUNE SERVICII -->
+    <section class="container py-5">
+        <h2 class="text-center mb-5" style="color: cyan; text-shadow: #003388 1.2px 1.2px 1.2px; font-weight: 800;">
+            SERVICII</h2>
+        <div class="row g-3 text-center justify-content-center">
+            <div class="col-6 col-md-3">
+                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
+                    <img src="proiectare.png" alt="Ciment" class="img-fluid rounded mb-2 product-img">
+                    <h3 class="h6 mb-2">PROIECTARE</h3>
+                    ★★★★★ 4.9
+                    <div class="btn-group-custom"
+                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
+                        <button class="btn-left">COMANDA</button>
+                        <button class="btn-right">🛒</button>
                     </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
+                    <img src="suport.png" alt="Beton" class="img-fluid rounded mb-2 product-img">
+                    <h3 class="h6 mb-2">SUPORT</h3>
+                    ★★★★★ 5.0
+                    <div class="btn-group-custom"
+                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
+                        <button class="btn-left">COMANDA</button>
+                        <button class="btn-right">🛒</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
+                    <img src="transport.png" alt="Mortar" class="img-fluid rounded mb-2 product-img">
+                    <h3 class="h6 mb-2">TRANSPORT</h3>
+                    ★★★★☆ 4.1
+                    <div class="btn-group-custom"
+                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
+                        <button class="btn-left">COMANDA</button>
+                        <button class="btn-right">🛒</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
+                    <img src="inchiriere.png" alt="Agregate" class="img-fluid rounded mb-2 product-img">
+                    <h3 class="h6 mb-2">ÎNCHIRIERE</h3>
+                    ★★★★★ 4.9
+                    <div class="btn-group-custom"
+                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
+                        <button class="btn-left">COMANDA</button>
+                        <button class="btn-right">🛒</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTIUNE PRODUSE -->
+    <section class="container py-5">
+        <h2 class="text-center mb-5" style="color: cyan; text-shadow: #003388 1.2px 1.2px 1.2px; font-weight: 800;">
+            PRODUSE</h2>
+        <div class="row g-3 text-center justify-content-center">
+            <div class="col-6 col-md-3">
+                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
+                    <img src="ciment.png" alt="Ciment" class="img-fluid rounded mb-2 product-img">
+                    <h3 class="h6 mb-2">CIMENT</h3>
+                    ★★★★★ 4.9
+                    <div class="btn-group-custom"
+                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
+                        <button class="btn-left">COMANDA</button>
+                        <button class="btn-right">🛒</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
+                    <img src="beton.png" alt="Beton" class="img-fluid rounded mb-2 product-img">
+                    <h3 class="h6 mb-2">BETON</h3>
+                    ★★★★☆ 4.1
+                    <div class="btn-group-custom"
+                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
+                        <button class="btn-left">COMANDA</button>
+                        <button class="btn-right">🛒</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
+                    <img src="mortar.png" alt="Mortar" class="img-fluid rounded mb-2 product-img">
+                    <h3 class="h6 mb-2">MORTAR</h3>
+                    ★★★★☆ 3.9
+                    <div class="btn-group-custom"
+                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
+                        <button class="btn-left">COMANDA</button>
+                        <button class="btn-right">🛒</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
+                    <img src="agregate.png" alt="Agregate" class="img-fluid rounded mb-2 product-img">
+                    <h3 class="h6 mb-2">AGREGATE</h3>
+                    ★★★★★ 4.9
+                    <div class="btn-group-custom"
+                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
+                        <button class="btn-left">COMANDA</button>
+                        <button class="btn-right">🛒</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTIUNE CONTACT -->
+    <section class="py-5" class="row bg-white">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 style="color: cyan; text-shadow: #003388 1.2px 1.2px 1.2px; font-weight: 800;">
+                        CONTACT</h2>
+                    <!-- LINIE OPTIONALA
+                    <div style="width: 60px; height: 4px; background: cyan; margin: 10px auto;"></div>
+                    -->
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="p-4 shadow border-0 rounded-4 bg-white h-100">
+                        <h3 class="mb-4 fw-bold">Trimite un mesaj</h3>
+                        <form action="#" onsubmit="return false;">
+                            <div class="mb-3">
+                                <h5 class="form-label fw-semibold">👤 Nume</h5>
+                                <input type="text" class="form-control custom-input" placeholder="Nume si prenume"
+                                    onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
+                            </div>
+                            <div class="mb-3">
+                                <h5 class="form-label fw-semibold">📧 Email</h5>
+                                <input type="email" class="form-control custom-input" placeholder="nume@email.ro"
+                                    onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
+                            </div>
+                            <div class="mb-3">
+                                <h5 class="form-label fw-semibold">💬 Mesaj</h5>
+                                <textarea class="form-control custom-input" rows="4"
+                                    placeholder="Scrie mesajul tău aici..."
+                                    onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')"></textarea>
+                            </div><br>
+                            <div class="text-center mt-4">
+                                <button type="button" class="btn fw-bold px-5 py-2"
+                                    style="background-color: #003388; color: cyan; border: 2px solid cyan; border-radius: 8px;"
+                                    onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
+                                    TRIMITE
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-4 shadow border-0 rounded-4 bg-white h-100">
+                        <h3 class="fw-bold mb-4">Unde ne găsiți?</h3>
+
+                        <div class="mb-4">
+                            <h5 class="fw-semibold mb-1">📧 Email depart. suport</h5>
+                            <p class="text-muted">contact@chatbot-consultant-CT.ro</p>
+                        </div>
+
+                        <div class="mb-4">
+                            <h5 class="fw-semibold mb-1">🏢 Adresă sediu central</h5>
+                            <p class="text-muted">Strada Chatbot, Nr. 1, București</p>
+                        </div>
+
+                        <div class="mb-4">
+                            <h5 class="fw-semibold mb-1">🏭 Adresă fabrică ciment</h5>
+                            <p class="text-muted">Zona Industrială, strada Chatbot</p>
+                        </div>
+
+                        <div class="mb-4">
+                            <h5 class="fw-semibold mb-1">📞 Telefon sediu central</h5>
+                            <p class="text-muted">+40 123 456 789</p>
+                        </div>
+
+
+
+                        </h5><br>
+                        <div class="mb-4">
+                            <h5 style="font-weight: 500; margin-top: 8px;">
+                                Aboneaza-te la Newsletter</h5>
+                            <form class="news-letter" style="margin-top: 17px; color: gold;">
+                                <input class="text-center" type="email" name="news-email" id="news-email"
+                                    placeholder="nume@email.ro"
+                                    onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
+                                <input type="submit" value="ACCEPT"
+                                    onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTIUNE LINK-URI PAGINI SITE -->
+    <footer class="text-white py-5" style="margin-bottom: 268px; background-color: #003388 !important;">
+        <div class="container text-center">
+            <div class="row row-g-3 row-cols-md-3 g-4 text-center">
+                <div class="col">
+                    <h4 class="h6 fw-bold mb-3"
+                        style="color: cyan; border-bottom: 2px solid cyan; display: inline-block; padding-bottom: 5px;">
+                        PRODUSE</h4>
+                    <ul class="list-unstyled">
+                        <li>Ciment</li>
+                        <li>Beton</li>
+                        <li>Mortar</li>
+                        <li>Agregate</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4 class="h6 fw-bold mb-3"
+                        style="color: cyan; border-bottom: 2px solid cyan; display: inline-block; padding-bottom: 5px;">
+                        COMPANIE</h4>
+                    <ul class="list-unstyled">
+                        <li>Istoric</li>
+                        <li>Misiune</li>
+                        <li>Valori</li>
+                        <li>Cariere</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4 class="h6 fw-bold mb-3"
+                        style="color: cyan; border-bottom: 2px solid cyan; display: inline-block; padding-bottom: 5px;">
+                        SUPORT</h4>
+                    <ul class="list-unstyled">
+                        <li>Comenzi</li>
+                        <li>Livrare</li>
+                        <li>Retur</li>
+                        <li>Termeni</li>
+                    </ul>
+                </div>
             </div>
 
-            <a href="./dashboard.xlsx" download>
-                Download media data.xlsx
-
-            </a><br><br>
-            <h5>
-                🥂 <br> Consumati responsabil alcool!
-            </h5>
-
-
-    </div>
-
+            <!-- INFO PORTOFOLIU-->
+            <div class="mt-5">
+                <img src="my-picture.jpg" alt="Robot" style="width: clamp(30px, 8vw, 50px); height: clamp(30px, 8vw, 50px); 
+                               border-radius: 50%; margin: 0 10px; object-fit: cover; border: 2px solid cyan;"><br>
+                <a href="https://cristian-tr.github.io/Cristian-T-Portfolio/"
+                    style="font-size: .8rem; background-color: cyan; border-radius: 17px; color: red; font-weight: 800; padding-left: 17px; padding-right: 17px; text-decoration: none;">
+                    CRISTIAN T - PORTFOLIO</a><br>
+                <small>&copy; 2026 CHATBOT CONSULTANT PROJECT</small><br>
+                <small>Built with HTML, CSS & JavaScript technologies</small><br>
+                Marca si produsele prezentate sunt fictive!<br>
+                </small>
+            </div>
+        </div>
     </footer>
 
+    <!-- SECTIUNE CHATBOT -->
+    <div id="chat-widget">
+        <div id="chat-trigger">
+            <div class="robot-image-container">
+                <img src="robohead.png" alt="Consultant Tehnic" class="floating-robot">
+            </div>
+            <div id="intro-text" class="chatbot-text">
+                Bună! <br> Sunt consultantul tehnic CT. <br>
+                Vrei să te ajut să finalizezi cu succes proiectul tău?
+            </div>
+            <div class="d-flex justify-content-center gap-2 mt-2">
+                <button class="btn btn-sm btn-primary py-0" onclick="startWithChoice('Da')"
+                    style="font-size: 1.2rem; font-weight: 500; color: white; background-color: springgreen; border: 3.5px solid black; text-shadow: black .8px .8px .8px; box-shadow: 0 0 0.35em rgba(0, 0, 0, 1), inset 0 0.25em 0.35em rgba(255, 255, 255, 0.35), inset 0 -0.25em 0.35em rgba(0, 0, 0, 0.5); cursor: pointer;">
+                    DA
+                </button>
+                <button class="btn btn-sm btn-outline-secondary py-0" onclick="startWithChoice('Nu')"
+                    style="font-size: 1.2rem; font-weight: 500; color: white; background-color: red; border: 3.5px solid black; text-shadow: black .8px .8px .8px; box-shadow: 0 0 0.35em rgba(0, 0, 0, 1), inset 0 0.25em 0.35em rgba(255, 255, 255, 0.35), inset 0 -0.25em 0.35em rgba(0, 0, 0, 0.5); cursor: pointer;">
+                    NU
+                </button>
+            </div>
+        </div>
+
+        <div id="chat-window" style="display: none;">
+            <div id="timeout-bar-container">
+                <div id="timeout-bar"></div>
+            </div>
+            <div class="minimize-btn" onclick="toggleChat()">
+                <span>🔽</span>
+            </div>
+            <div id="display"></div>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT PROGRESS BAR -->
+    <script>
+        window.onscroll = function () {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            let pb = document.getElementById("progress-bar");
+            if (pb) pb.style.width = scrolled + "%";
+        };
+    </script>
+
+    <script src="chatbot.js"></script>
 
 </body>
 
