@@ -28,7 +28,7 @@ body {
 
 /* --- CAROUSEL --- */
 .carousel-item {
-    height: 600px !important;
+    height: 710px !important;
     overflow: hidden;
     position: relative;
     background-color: #000;
