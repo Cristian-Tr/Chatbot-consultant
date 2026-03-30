@@ -92,6 +92,7 @@ body {
     width: 100%;
     max-width: 150px;
     display: block;
+    border: 2px solid cyan;
 }
 
 .btn-group-custom {
