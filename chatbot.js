@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- 4. LOGICA CONVERSAȚIEI ---
     function showWelcomeMenu() {
         window.step = "start";
-        addBotMessage(" <br> ℹ️ <br> Dorești să afli informații despre produse sau servicii necesare pentru finalizarea cu succes a proiectul tău? 🏡🏢🏦 <br> <br><br> ", ["DA", "NU"]);
+        addBotMessage(" <br> ℹ️ <br> Dorești să afli informații despre produse sau servicii necesare pentru finalizarea cu succes a proiectului tău? <br> 🏡🏢🏦 <br><br> ", ["DA", "NU"]);
     }
 
     window.processStep = function (choice) {
