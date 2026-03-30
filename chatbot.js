@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(closeChatUI, 4500);
             } else {
                 window.step = "services_step";
-                addBotMessage("Completează formularul de Contact pentru a primi informațiile solicitate! <br> Dorești informații despre unul dn serviciile de mai jos? <br> Selectează un serviciu: <br> ", ["PROIECTARE", "SUPORT", "TRANSPORT", "ÎNCHIRIERE", "CAUT ALTCEVA"]);
+                addBotMessage("Completează formularul de Contact pentru a primi informațiile solicitate! <br> Dorești informații despre unul din serviciile de mai jos? <br> Selectează un serviciu: <br> ", ["PROIECTARE", "SUPORT", "TRANSPORT", "ÎNCHIRIERE", "CAUT ALTCEVA"]);
             }
         }
         else if (window.step === "services_step") {
