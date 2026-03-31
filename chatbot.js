@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- 4. LOGICA CONVERSAȚIEI ---
     function showWelcomeMenu() {
         window.step = "start";
-        addBotMessage(" <br> ℹ️ <br> Dorești să afli informații despre produse sau servicii necesare pentru finalizarea cu succes a proiectului tău? <br> 🏡🏢🏦 <br><br> ", ["DA", "NU"]);
+        addBotMessage(" <br> ℹ️ <br> Dorești să afli informații despre produse sau servicii necesare pentru finalizarea cu succes a proiectului tău? <br><br> ", ["DA", "NU"]);
     }
 
     window.processStep = function (choice) {
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     "ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"
                 ]);
             } else if (choiceLow === "nu") {
-                addBotMessage("<br> 🤗 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> ℹ️ <br> Dacă vei avea nevoie pe viitor de informații despre produse sau servicii pentru proiectele tale, ne găsești aici!! <br> 🏡🏢🏦 <br><br> MULT SUCCES!");
+                addBotMessage("<br> 🤝 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> ℹ️ <br> Dacă vei avea nevoie pe viitor de informații despre produse sau servicii pentru proiectele tale, ne găsești aici!! <br> <br> 👍 <br><br> MULT SUCCES!");
                 setTimeout(closeChatUI, 7100);
             }
         }
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         else if (window.step === "products_selection") {
             if (choiceLow.includes("caut altceva")) {
-                addBotMessage("<br> 🤗 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> Dacă vei avea nevoie pe viitor de produse sau servicii pentru proiectele tale, ne găsești aici! <br> <br> 👍 <br><br> MULT SUCCES!");
+                addBotMessage("<br> 🤝 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> Dacă vei avea nevoie pe viitor de produse sau servicii pentru proiectele tale, ne găsești aici! <br> <br> 👍 <br><br> MULT SUCCES!");
                 setTimeout(closeChatUI, 4500);
             } else {
                 window.step = "services_step";
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
         else if (window.step === "services_step") {
             window.step = "ask_restart";
            if (choiceLow === "caut altceva") {
-                addBotMessage("<br> 🤗 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> ℹ️ <br> Dorești detalii pentru un alt proiect?", ["DA", "NU"]);
+                addBotMessage("<br> 🤝 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> ℹ️ <br> Dorești detalii pentru un alt proiect?", ["DA", "NU"]);
             }
             else  {
                 addBotMessage("📝 <br> Completează formularul de Contact pt. a primi info solicitate! <br> <br> ℹ️ <br> Dorești detalii pentru alt proiect?", ["DA", "NU"]);
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.step = "project_type";
                 addBotMessage("<br> 🏗️ <br> Ce include noul tău proiect?", ["ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"]);
             } else {
-                addBotMessage("<br> ℹ️ <br> Dacă vei avea nevoie pe viitor de informații despre produse sau servicii necesare pentru proiectele tale, ne găsești aici! <br> 🏡🏢🏦 <br><br> MULT SUCCES!");
+                addBotMessage("<br> ℹ️ <br> Dacă vei avea nevoie pe viitor de informații despre produse sau servicii necesare pentru proiectele tale, ne găsești aici! <br> <br> 👍 <br><br> MULT SUCCES!");
                 setTimeout(closeChatUI, 4500);
             }
         }
