@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ]);
             } else if (choiceLow === "nu") {
                 addBotMessage("<br> 🤝 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> ℹ️ <br> Dacă vei avea nevoie pe viitor de informații despre produse sau servicii pentru proiectele tale, ne găsești aici!! <br> <br> 👍 <br><br> MULT SUCCES!");
-                setTimeout(closeChatUI, 7100);
+                setTimeout(closeChatUI, 8000);
             }
         }
         else if (window.step === "project_type") {
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
         else if (window.step === "products_selection") {
             if (choiceLow.includes("caut altceva")) {
                 addBotMessage("<br> 🤝 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> Dacă vei avea nevoie pe viitor de produse sau servicii pentru proiectele tale, ne găsești aici! <br> <br> 👍 <br><br> MULT SUCCES!");
-                setTimeout(closeChatUI, 4500);
+                setTimeout(closeChatUI, 8000);
             } else {
                 window.step = "services_step";
                 addBotMessage("📝 <br> Completează formularul de Contact pt. a primi info solicitate! <br> Dorești detalii despre unul din serviciile de mai jos? <br> Selectează un serviciu: <br> ", ["PROIECTARE", "SUPORT", "TRANSPORT", "ÎNCHIRIERE", "CAUT ALTCEVA"]);
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 addBotMessage("<br> 🏗️ <br> Ce include noul tău proiect?", ["ALEI/GARAJE", "FUNDAȚIE/SCARĂ", "PLACĂ/CENTURĂ", "STÂLPI/GRINZI", "ZIDURI/TENCUIELI"]);
             } else {
                 addBotMessage("<br> ℹ️ <br> Dacă vei avea nevoie pe viitor de informații despre produse sau servicii necesare pentru proiectele tale, ne găsești aici! <br> <br> 👍 <br><br> MULT SUCCES!");
-                setTimeout(closeChatUI, 4500);
+                setTimeout(closeChatUI, 8000);
             }
         }
     };
