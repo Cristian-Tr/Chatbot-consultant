@@ -4,401 +4,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CT Chatbot</title>
-    <meta name="description" content="eCommerce Landing page, Chatbot consultant">
-    <link rel="icon" href="./" type="image/png">
-    <link rel="canonical" href="https://cristian-tr.github.io/Chatbot-consultant/">
-    <meta property="og:title" content="Proiect realizat pe GitHub">
-    <meta property="og:description" content="Vezi detalii in contul meu: github.com/Cristian-Tr">
-    <meta property="og:type" content="profile">
-    <meta name="robots" content="index, follow">
+    <title>Shakies Berries</title>
+    <meta name="description" content="Shakies Berries - Sucuri naturale livrate prin dronă.">
+    <link rel="icon" href="./0.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900|Lato:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="chatbot.css">
-    <script src="chatbot.js"></script>
+    <link rel="stylesheet" href="drone.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Cristian Tr",
-      "jobTitle": "Analist IT", 
-      "url": "https://cristian-tr.github.io/Chatbot-consultant/",
+      "name": "Cristian Tr", 
+      "url": "https://cristian-tr.github.io/Email-Newsletter/",
       "sameAs": ["https://github.com/Cristian-Tr/"]
     }
-    </script>
+</script>
+
 </head>
 
 <body>
 
-    <!-- SECTIUNE PROGRESS BAR -->
-    <div id="progress-container">
-        <div id="progress-bar"></div>
-    </div>
 
-    <!-- HEADER CU TITLU WEBSITE -->
-    <header class="py-3 shadow-sm sticky-top" style="background-color: #003388 !important;">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h1 class="mb-0 d-flex align-items-center justify-content-center" style="color: cyan; letter-spacing: 1px; font-weight: 800; 
-                           /* VALORI MOBIL: min .8rem, preferat 3vw, max 1.7rem */
-                           font-size: clamp(.8rem, 4vw, 1.7rem); text-transform: uppercase;">
-                        C H A T B O T
-                        <img src="robohead.png" alt="Robot" style="width: clamp(30px, 8vw, 50px); height: clamp(30px, 8vw, 50px); 
-                               border-radius: 50%; margin: 0 10px; object-fit: cover; border: 2px solid cyan;">
-                        CONSULTANT
-                    </h1>
+    <header class="header-cta">
+        <div class="cta-overlay">
+            <div class="cta-container">
+                <h1>SHAKIES BERRIES</h1>
+                <h2>NATURAL JUICE</h2>
+                <h3 class="drone-title">DRONE DELIVERY</h3>
+
+                <button class="btn-our-products"
+                    onclick="alert('Acesta este un site demo! Nu se pot trimite comenzi!')">
+                    OUR PRODUCTS
+                </button>
+
+                <div class="drone-unit">
+                    <svg viewBox="0 0 400 450" class="drone-svg-container">
+                        <path d="M80,120 L320,120 L335,150 L65,150 Z M140,100 L260,100 L280,120 L120,120 Z"
+                            fill="red" />
+
+                        <rect class="propeller-svg" x="40" y="105" width="90" height="17" rx="5" fill="springgreen" />
+                        <rect class="propeller-svg" x="270" y="105" width="90" height="17" rx="5" fill="springgreen" />
+
+                        <g fill="springgreen">
+                            <path d="M185,150 L180,180 L170,185 L170,195 L185,190 Z" />
+                            <path d="M215,150 L220,180 L230,185 L230,195 L215,190 Z" />
+                        </g>
+
+                        <g class="bottle-cargo">
+                            <rect x="190" y="145" width="20" height="12" rx="3" fill="springgreen" />
+                            <path
+                                d="M190,157 L210,157 L210,180 C210,200 225,210 225,230 L225,275 L175,275 L175,230 C175,210 190,200 190,180 Z"
+                                fill="red" />
+                            <rect id="label" x="180" y="230" width="40" height="35" fill="springgreen" />
+                            <text x="200" y="243" text-anchor="middle" font-family="Arial, sans-serif"
+                                font-weight="bold" font-size="8" fill="red">
+                                <tspan x="200" dy="0">Shakies</tspan>
+                                <tspan x="200" dy="10">Berries</tspan>
+                            </text>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- CAROUSEL CU 3 IMAGINI -->
-    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="1.png" class="d-block w-100" alt="Fabrică">
-                <div class="carousel-caption">
-                    <h2 class="carousel-text-custom">Fabrici cu tehnologii avansate</h2>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="2.png" class="d-block w-100" alt="Transport">
-                <div class="carousel-caption">
-                    <h2 class="carousel-text-custom">Mijloace de transport moderne</h2>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="3.png" class="d-block w-100" alt="Voluntariat">
-                <div class="carousel-caption">
-                    <h2 class="carousel-text-custom">Voluntariat în comunitatea locală</h2>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </div>
 
     <!-- SECTIUNE PREZENTARE -->
-    <section class="py-5 text-center text-white" style="background-color: #003388 !important;">
+    <section class="text-center text-white"
+        style="background-color: transparent !important; margin-top: 35px; margin-bottom: 71px;"><br>
         <div class="container">
-            <h3 style="color: cyan;">DEMO LANDING PAGE</h3>
+            <h5>DEMO DIGITAL MARKETING <br>
+                Landing Page & Email Newsletter
+            </h5>
             <a href="https://cristian-tr.github.io/Cristian-T-Portfolio/"
                 style="font-size: 1rem; background-color: cyan; border-radius: 17px; color: gold; font-weight: 800; padding-left: 17px; padding-right: 17px; text-decoration: none;">
-                CRISTIAN T <img src="my-picture.png" alt="My picture" style="width: clamp(35px, 8vw, 53px); height: clamp(35px, 8vw, 53px); 
+                CRISTIAN T <img src="my-photo.jpg" alt="My picture" style="width: clamp(35px, 8vw, 53px); height: clamp(35px, 8vw, 53px); 
                                border-radius: 50%; margin-bottom: 8px; object-fit: cover; border: 2px solid cyan;">
-                PORTFOLIO</a><br>
-
+                PORTFOLIO</a>
         </div>
     </section>
 
-    <!-- SECTIUNE SERVICII -->
-    <section class="container py-5">
-        <h2 class="text-center mb-5" style="color: cyan; text-shadow: #003388 1.2px 1.2px 1.2px; font-weight: 800;">
-            SERVICII</h2>
-        <div class="row g-3 text-center justify-content-center">
-            <div class="col-6 col-md-3">
-                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
-                    <img src="proiectare.png" alt="Ciment" class="img-fluid rounded mb-2 product-img">
-                    <h3 class="h6 mb-2">PROIECTARE</h3>
-                    ★★★★☆ 4.0
-                    <div class="btn-group-custom"
-                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
-                        <button class="btn-left">COMANDA</button>
-                        <button class="btn-right">🛒</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
-                    <img src="suport.png" alt="Beton" class="img-fluid rounded mb-2 product-img">
-                    <h3 class="h6 mb-2">ECHIPAMENT</h3>
-                    ★★★★★ 5.0
-                    <div class="btn-group-custom"
-                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
-                        <button class="btn-left">COMANDA</button>
-                        <button class="btn-right">🛒</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
-                    <img src="transport.png" alt="Mortar" class="img-fluid rounded mb-2 product-img">
-                    <h3 class="h6 mb-2">TRANSPORT</h3>
-                    ★★★★☆ 4.1
-                    <div class="btn-group-custom"
-                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
-                        <button class="btn-left">COMANDA</button>
-                        <button class="btn-right">🛒</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
-                    <img src="inchiriere.png" alt="Agregate" class="img-fluid rounded mb-2 product-img">
-                    <h3 class="h6 mb-2">ÎNCHIRIERE</h3>
-                    ★★★★☆ 4.0
-                    <div class="btn-group-custom"
-                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
-                        <button class="btn-left">COMANDA</button>
-                        <button class="btn-right">🛒</button>
-                    </div>
-                </div>
+    <section>
+        <div class="slidesShow">
+            <div class='slides'>
             </div>
         </div>
     </section>
 
-    <!-- SECTIUNE PRODUSE -->
-    <section class="container py-5">
-        <h2 class="text-center mb-5" style="color: cyan; text-shadow: #003388 1.2px 1.2px 1.2px; font-weight: 800;">
-            PRODUSE</h2>
-        <div class="row g-3 text-center justify-content-center">
-            <div class="col-6 col-md-3">
-                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
-                    <img src="ciment.png" alt="Ciment" class="img-fluid rounded mb-2 product-img">
-                    <h3 class="h6 mb-2">CIMENT</h3>
-                    ★★★★★ 4.9
-                    <div class="btn-group-custom"
-                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
-                        <button class="btn-left">COMANDA</button>
-                        <button class="btn-right">🛒</button>
-                    </div>
-                </div>
+
+    <section class="section-history">
+        <div class="cta-container-flex">
+            <div class="text-block">
+                <h2>OUR STORY</h2>
+                <p>It all started on a small mountain farm, where transporting fresh berries was a challenge, but now
+                    we decided to combine nature with state-of-the-art technology.
+                    <br>That's why today, our company brings the fruits to our modern factory and then to your door,
+                    keeping the freshness intact.<br>
+                    We will continue to improve all activities so that Shakies Berries remains your favorite juice
+                    in the future!
+                </p>
             </div>
-            <div class="col-6 col-md-3">
-                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
-                    <img src="beton.png" alt="Beton" class="img-fluid rounded mb-2 product-img">
-                    <h3 class="h6 mb-2">BETON</h3>
-                    ★★★★☆ 4.1
-                    <div class="btn-group-custom"
-                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
-                        <button class="btn-left">COMANDA</button>
-                        <button class="btn-right">🛒</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
-                    <img src="mortar.png" alt="Mortar" class="img-fluid rounded mb-2 product-img">
-                    <h3 class="h6 mb-2">MORTAR</h3>
-                    ★★★★☆ 3.9
-                    <div class="btn-group-custom"
-                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
-                        <button class="btn-left">COMANDA</button>
-                        <button class="btn-right">🛒</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
-                    <img src="agregate.png" alt="Agregate" class="img-fluid rounded mb-2 product-img">
-                    <h3 class="h6 mb-2">AGREGATE</h3>
-                    ★★★★★ 4.9
-                    <div class="btn-group-custom"
-                        onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
-                        <button class="btn-left">COMANDA</button>
-                        <button class="btn-right">🛒</button>
-                    </div>
-                </div>
+            <div class="image-block">
+                <img src="./old-factory.png" alt="Old factory">
             </div>
         </div>
     </section>
 
-    <!-- SECTIUNE CONTACT -->
-    <section class="py-5" class="row bg-white">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-12 text-center">
-                    <h2 style="color: cyan; text-shadow: #003388 1.2px 1.2px 1.2px; font-weight: 800;">
-                        CONTACT</h2>
-                    <!-- LINIE OPTIONALA
-                    <div style="width: 60px; height: 4px; background: cyan; margin: 10px auto;"></div>
-                    -->
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-6">
-                    <div class="p-4 shadow border-0 rounded-4 bg-white h-100">
-                        <h3 class="mb-4 fw-bold">Trimite un mesaj</h3>
-                        <form action="#" onsubmit="return false;">
-                            <div class="mb-3">
-                                <h5 class="form-label fw-semibold">👤 Nume</h5>
-                                <input type="text" class="form-control custom-input" placeholder="Nume si prenume"
-                                    onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
-                            </div>
-                            <div class="mb-3">
-                                <h5 class="form-label fw-semibold">📧 Email</h5>
-                                <input type="email" class="form-control custom-input" placeholder="nume@email.ro"
-                                    onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
-                            </div>
-                            <div class="mb-3">
-                                <h5 class="form-label fw-semibold">💬 Mesaj</h5>
-                                <textarea class="form-control custom-input" rows="4"
-                                    placeholder="Scrie mesajul tău aici..."
-                                    onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')"></textarea>
-                            </div><br>
-                            <div class="text-center mt-4">
-                                <button type="button" class="btn fw-bold px-5 py-2"
-                                    style="background-color: #003388; color: cyan; border: 2px solid cyan; border-radius: 8px;"
-                                    onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
-                                    TRIMITE
-                                </button>
-                            </div>
+    <section class="section-tech-delivery">
+        <div class="cta-container-flex tech-reverse">
 
-                        </form>
+            <div class="text-block">
+                <h2>DRONE DELIVERY</h2>
+                <p>Our fleet of advanced drones ensures lightning-fast delivery of fresh, natural juices straight to
+                    your doorstep. <br>
+                    Experience ultimate convenience as we bring the vibrant taste of our premium berries
+                    straight to your doorstep in minutes. <br>
+                    All you have to do is wait, and we will bring the freshest essence of nature directly to you,
+                    wherever you are.</p>
+            </div>
+
+            <div class="image-block">
+                <img src="./drone-delivery.png" alt="Drone delivery">
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-stats">
+        <h2>SHAKIES BERRIES RESULTS</h2><br>
+        <div class="stats-grid">
+            <div class="row row-cols-2 justify-content-center text-center g-4">
+                <div class="col-6 col-md-3">
+                    <div class="stat-box">
+                        <h3 class="counter" data-target="125000">0</h3>
+                        <h4 style="color: springgreen;">ORDERS</h4>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="p-4 shadow border-0 rounded-4 bg-white h-100">
-                        <h3 class="fw-bold mb-4">Unde ne găsiți?</h3>
-
-                        <div class="mb-4">
-                            <h5 class="fw-semibold mb-1">📧 Email depart. suport</h5>
-                            <p class="text-muted">contact@chatbot-consultant-CT.ro</p>
-                        </div>
-
-                        <div class="mb-4">
-                            <h5 class="fw-semibold mb-1">🏢 Adresă sediu central</h5>
-                            <p class="text-muted">Strada Chatbot, Nr. 1, București</p>
-                        </div>
-
-                        <div class="mb-4">
-                            <h5 class="fw-semibold mb-1">🏭 Adresă fabrică ciment</h5>
-                            <p class="text-muted">Zona Industrială, strada Chatbot</p>
-                        </div>
-
-                        <div class="mb-4">
-                            <h5 class="fw-semibold mb-1">📞 Telefon sediu central</h5>
-                            <p class="text-muted">+40 123 456 789</p>
-                        </div>
-
-
-
-                        </h5><br>
-                        <div class="mb-4">
-                            <h5 style="font-weight: 500; margin-top: 8px;">
-                                Aboneaza-te la Newsletter</h5>
-                            <form class="news-letter" style="margin-top: 17px; color: gold;">
-                                <input class="text-center" type="email" name="news-email" id="news-email"
-                                    placeholder="nume@email.ro"
-                                    onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
-                                <input type="submit" value="ACCEPT"
-                                    onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
-                            </form>
-                        </div>
-
+                <div class="col-6 col-md-3">
+                    <div class="stat-box">
+                        <h3 class="counter" data-target="107000">0</h3>
+                        <h4 style="color: springgreen;">CLIENTS</h4>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- SECTIUNE LINK-URI PAGINI SITE -->
-    <footer class="text-white py-5" style="margin-bottom: 215px; background-color: #003388 !important;">
-        <div class="container text-center">
-            <div class="row row-g-3 row-cols-md-3 g-4 text-center">
-                <div class="col">
-                    <h4 class="h6 fw-bold mb-3"
-                        style="color: cyan; border-bottom: 2px solid cyan; display: inline-block; padding-bottom: 5px;">
-                        RESURSE</h4>
-                    <ul class="list-unstyled">
-                        <li>Rețete</li>
-                        <li>Tutoriale</li>
-                        <li>Manuale</li>
-                        <li>Noutăți</li>
-                    </ul>
+        <section class="col-12" style="margin-top: 57px;">
+            <h2>FIND THE RIGHT PRODUCT</h2>
+            <div class="quiz-wrapper">
+                <h3 class="quiz-title">What juice would suit you?</h3>
+
+                <div class="options-grid" id="quizOptions">
+                    <button class="quiz-btn" onclick="selectJuice(this, 'Raspberry')">Velvety Aroma</button>
+                    <button class="quiz-btn" onclick="selectJuice(this, 'Strawberry')">Intense Perfume</button>
+                    <button class="quiz-btn" onclick="selectJuice(this, 'Cranberry')">Sour Taste</button>
+                    <button class="quiz-btn" onclick="selectJuice(this, 'All Berries')">Energizing Mix</button>
                 </div>
-                <div class="col">
-                    <h4 class="h6 fw-bold mb-3"
-                        style="color: cyan; border-bottom: 2px solid cyan; display: inline-block; padding-bottom: 5px;">
-                        COMPANIE</h4>
-                    <ul class="list-unstyled">
-                        <li>Istoric</li>
-                        <li>Misiune</li>
-                        <li>Echipa</li>
-                        <li>Cariere</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h4 class="h6 fw-bold mb-3"
-                        style="color: cyan; border-bottom: 2px solid cyan; display: inline-block; padding-bottom: 5px;">
-                        SUPORT</h4>
-                    <ul class="list-unstyled">
-                        <li>Comenzi</li>
-                        <li>Plata</li>
-                        <li>Livrare</li>
-                        <li>Retur</li>
-                    </ul>
+
+                <div class="result-area">
+                    <span id="juiceResult" class="result-text"></span>
                 </div>
             </div>
+        </section>
+
+
+        <main class="products-showcase">
+            <h2>OUR PRODUCTS</h2>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="./2.png" class="img-glow" alt="Cranberry Shakies">
+                    <h3>Shakies Berries</h3>
+                    <h5>CRANBERRY</h5>
+                    <div class="rating">★★★★★ 4.9</div>
+                    <button class="btn-buy" onclick="alert('Acesta este un site demo! Nu se pot trimite comenzi!')">
+                        BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="./3.png" class="img-glow" alt="Strawberry Shakies">
+                    <h3>Shakies Berries</h3>
+                    <h5>STRAWBERRY</h5>
+                    <div class="rating">★★★★★ 4.8</div>
+                    <button class="btn-buy" onclick="alert('Acesta este un site demo! Nu se pot trimite comenzi!')">
+                        BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="./4.png" class="img-glow" alt="Raspberry Shakies">
+                    <h3>Shakies Berries</h3>
+                    <h5>RASPBERRY</h5>
+                    <div class="rating">★★★★★ 5.0</div>
+                    <button class="btn-buy" onclick="alert('Acesta este un site demo! Nu se pot trimite comenzi!')">
+                        BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <span class="new-badge">NEW</span>
+                    <img src="./5.png" class="img-glow" alt="All Berries Shakies">
+                    <h3>Shakies Berries</h3>
+                    <h5>MIX BERRIES</h5>
+                    <div class="rating">★★★★☆ 3.9</div>
+                    <button class="btn-buy" onclick="alert('Acesta este un site demo! Nu se pot trimite comenzi!')">
+                        BUY NOW</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="row text-center" style="background-color: transparent !important; margin-top: 53px;">
 
             <!-- INFO PORTOFOLIU-->
-            <div class="mt-5" ;">
+            <div class="col-12 text-center">
                 <a href="https://cristian-tr.github.io/Cristian-T-Portfolio/"
                     style="font-size: 1rem; background-color: cyan; border-radius: 17px; color: gold; font-weight: 800; padding-left: 17px; padding-right: 17px; text-decoration: none;">
-                    CRISTIAN T <img src="my-picture.png" alt="My picture" style="width: clamp(35px, 8vw, 53px); height: clamp(35px, 8vw, 53px); 
+                    CRISTIAN T <img src="my-photo.jpg" alt="My picture" style="width: clamp(35px, 8vw, 53px); height: clamp(35px, 8vw, 53px); 
                                border-radius: 50%; margin-bottom: 8px; object-fit: cover; border: 2px solid cyan;">
                     PORTFOLIO</a><br>
-                <small>&copy; 2026 CHATBOT CONSULTANT PROJECT</small><br>
+                <small>&copy; 2026 SHAKIES BERRIES PROJECT</small><br>
                 <small>Built with HTML, CSS & JavaScript technologies</small><br>
                 <small>Serviciile si produsele expuse sunt fictive!<br>
-                </small>
+                </small><br>
             </div>
-        </div>
-    </footer>
-
-    <!-- SECTIUNE CHATBOT -->
-    <div id="chat-widget">
-        <div id="chat-trigger">
-            <div class="robot-image-container">
-                <img src="robohead.png" alt="Consultant Tehnic" class="floating-robot">
             </div>
-            <div id="intro-text" class="chatbot-text">
-                Bună! <br> Sunt consultantul tehnic CT. <br>
-                Vrei să te ajut să finalizezi cu succes proiectul tău?
-            </div>
-            <div class="d-flex justify-content-center gap-2 mt-2">
-                <button class="btn btn-sm btn-primary py-0" onclick="startWithChoice('Da')"
-                    style="font-size: 1.2rem; font-weight: 500; color: white; background-color: springgreen; border: 3.5px solid black; text-shadow: black .8px .8px .8px; box-shadow: 0 0 0.35em rgba(0, 0, 0, 1), inset 0 0.25em 0.35em rgba(255, 255, 255, 0.35), inset 0 -0.25em 0.35em rgba(0, 0, 0, 0.5); cursor: pointer;">
-                    DA
-                </button>
-                <button class="btn btn-sm btn-outline-secondary py-0" onclick="startWithChoice('Nu')"
-                    style="font-size: 1.2rem; font-weight: 500; color: white; background-color: red; border: 3.5px solid black; text-shadow: black .8px .8px .8px; box-shadow: 0 0 0.35em rgba(0, 0, 0, 1), inset 0 0.25em 0.35em rgba(255, 255, 255, 0.35), inset 0 -0.25em 0.35em rgba(0, 0, 0, 0.5); cursor: pointer;">
-                    NU
-                </button>
-            </div>
-        </div>
+        </footer>
 
-        <div id="chat-window" style="display: none;">
-            <div id="timeout-bar-container">
-                <div id="timeout-bar"></div>
-            </div>
-            <div class="minimize-btn" onclick="toggleChat()">
-                <span>🔽</span>
-            </div>
-            <div id="display"></div>
-        </div>
-    </div>
+        <script>
+            function selectJuice(element, flavor) {
+                const resultSpan = document.getElementById('juiceResult');
+                const buttons = document.querySelectorAll('.quiz-btn');
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                // Resetăm starea butoanelor
+                buttons.forEach(btn => btn.classList.remove('active'));
 
-    <!-- SCRIPT PROGRESS BAR -->
-    <script>
-        window.onscroll = function () {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            let pb = document.getElementById("progress-bar");
-            if (pb) pb.style.width = scrolled + "%";
-        };
-    </script>
+                // Activăm butonul apăsat
+                element.classList.add('active');
 
-    <script src="chatbot.js"></script>
+                // Efect de tranziție pentru text
+                resultSpan.classList.remove('show');
 
+                setTimeout(() => {
+                    resultSpan.innerText = "Shakies Berries - " + flavor;
+                    resultSpan.classList.add('show');
+                }, 170);
+            }
+        </script>
+
+        <script>
+            const counters = document.querySelectorAll('.counter');
+            const speed = 80;
+
+            // 1. Definim funcția de numărare (logica ta originală)
+            const runCounter = (counter) => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            };
+
+            // 2. Creăm "Observatorul" care pândește scroll-ul
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Dacă elementul e vizibil, pornim numărătoarea
+                        runCounter(entry.target);
+                        // Opрим observarea pentru acest element (să nu numere de fiecare dată când dăm scroll)
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 }); // 0.5 înseamnă că începe când 50% din element e vizibil
+
+            // 3. Spunem observatorului ce elemente să urmărească
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </body>
 
 </html>
