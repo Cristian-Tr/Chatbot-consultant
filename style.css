@@ -143,6 +143,10 @@ body {
     outline: none;
 }
 
+/* ============================================================
+   6. FOOTER
+   ============================================================ */
+
 footer ul li {
     margin-bottom: 8px;
     cursor: pointer;
@@ -219,41 +223,86 @@ button:hover {
   }
 }
 
-.fa {
-    padding: 8px;
-    font-size: 17px;
-    width: 32px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
+/* ── SOCIAL MEDIA BUTTONS ── */
+.social-media-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  transform: translateZ(12px);
+  margin: auto;
+  text-align: center;
 }
 
-
-.fa:hover {
-    opacity: 0.7;
+.social-btn {
+  width: 35px;
+  height: 35px;
+  background: black;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: rgba(255, 255, 255, 0.45);
+  color-scheme: light dark;
+  forced-color-adjust: none;
 }
 
-.fa-youtube {
-    background: #bb0000;
-    color: white;
+.social-btn:hover {
+  transform: translateY(-3px);
 }
 
-.fa-facebook {
-    background: #3B5998;
-    color: white;
+.social-btn.linkedin {
+  background: #007bb5;
+  color: white;
 }
 
-.fa-linkedin {
-    background: #007bb5;
-    color: white;
+.social-btn.twitter {
+  background: #1a1a1a;
+  color: #f0f0f0;
 }
 
-.fa-instagram {
-    background: #125688;
-    color: white;
+.social-btn.github {
+  background: #2b2b2b !important;
+  color: #e0e0e0 !important;  
+  border: 1px solid #444 !important;
 }
 
-.fa-pinterest {
-    background: #cb2027;
-    color: white;
+.social-btn.youtube {
+  background: #bb0000;
+  color: white;
 }
+
+.social-btn.instagram {
+  background: #e1306c;
+  color: white;
+}
+
+.social-btn.linkedin:hover {
+  box-shadow: 0 0 8px #0077b5;
+  border-color: #00a0dc;
+}
+
+.social-btn.twitter:hover {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3) !important;
+  border-color: #555 !important;
+  color: #ffffff !important;
+}
+
+.social-btn.github:hover {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3) !important;
+  border-color: #888 !important; 
+  color: #ffffff !important; 
+}
+
+.social-btn.youtube:hover {
+  box-shadow: 0 0 8px #bb0000;
+  border-color: #ff3232;
+}
+
+.social-btn.instagram:hover {
+  box-shadow: 0 0 8px #e1306c;
+  border-color: #fd1d1d;
+}
+
