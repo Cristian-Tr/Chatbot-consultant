@@ -133,7 +133,7 @@ h5 {
   flex-direction: column;
   align-items: center;
   background-color: white;
-  margin: 8px;
+  margin: 8px; /* Aceasta valoare va fi redusa pe mobil de regula de mai jos */
 }
 
 .product-wrapper:hover {
@@ -224,7 +224,6 @@ footer ul li:hover {
   border: 2px solid cyan;
   border-radius: 8px;
   transition: all 0.3s ease;
-  /* Bonus: face hover-ul mai fin */
 }
 
 .custom-btn:hover {
@@ -253,11 +252,6 @@ footer ul li:hover {
   }
 }
 
-.news-letter input[type="submit"]:hover {
-  background-color: cyan !important;
-  /* un cyan puțin mai închis */
-}
-
 .news-letter input[type="submit"] {
   width: 35%;
   background-color: #003388;
@@ -268,6 +262,10 @@ footer ul li:hover {
   border-radius: 0 8px 8px 0;
   border: 2px solid cyan;
   margin-left: -3px;
+}
+
+.news-letter input[type="submit"]:hover {
+  background-color: cyan !important;
 }
 
 @media only screen and (min-width: 768px) {
@@ -304,22 +302,56 @@ footer ul li:hover {
   transform: translateY(-3px);
 }
 
-.social-btn.linkedin {
-  background: #007bb5;
-  color: white;
-}
+.social-btn.linkedin { background: #007bb5; color: white; }
+.social-btn.youtube { background: #bb0000; color: white; }
+.social-btn.github { background: #2b2b2b; color: white; }
+.social-btn.instagram { background: #e1306c; color: white; }
 
-.social-btn.youtube {
-  background: #bb0000;
-  color: white;
-}
+/* ============================================================
+   --- REPARATII FINALE PENTRU MOBIL (2 COLOANE) ---
+   ============================================================ */
+@media (max-width: 576px) {
+  /* Reducem padding-ul containerului ca sa castigam spatiu pe laterale */
+  .frosted-glass-box {
+    padding: 20px 10px !important;
+  }
 
-.social-btn.github {
-  background: #2b2b2b;
-  color: white;
-}
+  /* Eliminam marginea fixa de 8px care "strivea" coloanele de 50% */
+  .product-wrapper {
+    margin: 5px 2px !important;
+    padding: 10px 5px !important;
+  }
 
-.social-btn.instagram {
-  background: #e1306c;
-  color: white;
+  /* Imaginea produsului sa nu fie prea mare pe mobil */
+  .product-img {
+    max-width: 100px;
+    padding: 4px;
+  }
+
+  /* Textul titlului sa nu rupa cardul */
+  .product-wrapper h3 {
+    font-size: 0.7rem !important;
+    white-space: nowrap;
+  }
+
+  /* Grupul de butoane sa fie flexibil si mai mic */
+  .btn-group-custom {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .btn-left, .btn-right {
+    font-size: 0.6rem !important;
+    padding: 6px 2px !important;
+  }
+  
+  /* Ajustare Newsletter pe mobil */
+  .news-letter input[type="email"] {
+    width: 60% !important;
+    font-size: 0.75rem;
+  }
+  .news-letter input[type="submit"] {
+    width: 30% !important;
+    font-size: 0.75rem;
+  }
 }
