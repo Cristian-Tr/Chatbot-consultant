@@ -1,16 +1,22 @@
-/* --- FUNDAL SI BAZA --- */
+/* ============================================================
+   FUNDAL SI BAZA
+   ============================================================ */
+
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('./residential-area.webp');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  color: #212529;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+/* Blocare inversare culori de catre browser */
+:root {
+  color-scheme: light only;
 }
 
 section,
@@ -40,7 +46,10 @@ h5 {
   text-shadow: .8px .8px .8px black;
 }
 
-/* --- PROGRESS BAR --- */
+/* ============================================================
+   PROGRESS BAR
+   ============================================================ */
+
 #progress-container {
   position: fixed;
   top: 0;
@@ -59,7 +68,10 @@ h5 {
   transition: width 0.1s ease-out;
 }
 
-/* --- CAROUSEL --- */
+/* ============================================================
+   CAROUSEL
+   ============================================================ */
+
 .carousel-item {
   height: 71vh !important;
   width: 100%;
@@ -109,7 +121,9 @@ h5 {
   }
 }
 
-/* --- SECTIUNE PRODUSE/SERVICII --- */
+/* ============================================================
+   SECTIUNI PRODUSE/SERVICII
+   ============================================================ */
 
 #servicii,
 #produse {
@@ -117,14 +131,15 @@ h5 {
 }
 
 .frosted-glass-box {
-  background: rgba(255, 255, 255, 0.4) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  background-image: none !important;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  padding: 40px;
-  color: white;
+  width: 98%;
+  background: #003388 !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 35px 17px 35px 17px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  color: #ffffff !important;
 }
 
 .product-wrapper {
@@ -133,7 +148,7 @@ h5 {
   flex-direction: column;
   align-items: center;
   background-color: white;
-  margin: 8px; /* Aceasta valoare va fi redusa pe mobil de regula de mai jos */
+  margin: 8px;
 }
 
 .product-wrapper:hover {
@@ -169,12 +184,12 @@ h5 {
 
 .btn-left {
   flex: 3;
-  border-radius: 6px 0 0 6px;
+  border-radius: 8px 0 0 8px;
 }
 
 .btn-right {
   flex: 1;
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 8px 8px 0;
 }
 
 .btn-group-custom:hover .btn-left,
@@ -183,7 +198,10 @@ h5 {
   color: #003366;
 }
 
-/* --- FORMULAR CONTACT --- */
+/* ============================================================
+   CONTACT
+   ============================================================ */
+
 .custom-input {
   border: 1px solid #ced4da;
   border-radius: 8px;
@@ -197,7 +215,11 @@ h5 {
   outline: none;
 }
 
-/* --- FOOTER --- */
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
 footer ul li {
   margin-bottom: 8px;
   cursor: pointer;
@@ -274,84 +296,118 @@ footer ul li:hover {
   }
 }
 
-/* ── SOCIAL MEDIA BUTTONS ── */
-.social-media-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 22px;
-  transform: translateZ(12px);
-  margin: auto;
-  text-align: center;
+/* Ajustare Newsletter pe mobil */
+.news-letter input[type="email"] {
+  width: 60% !important;
+  font-size: 0.75rem;
 }
 
-.social-btn {
-  width: 35px;
-  height: 35px;
-  background: black;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+.news-letter input[type="submit"] {
+  width: 30% !important;
+  font-size: 0.75rem;
+}
+
+
+/* ── SOCIAL MEDIA BUTTON ── */
+.linkedin-container {
+  display: flex;
+  justify-content: center;
+  margin: 1px auto;
+}
+
+.animated-linkedin-btn {
+  position: relative;
+  width: 287px;
+  height: 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  text-decoration: none !important;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* Elementul care generează lumina */
+.animated-linkedin-btn::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 600%;
+  background: conic-gradient(transparent,
+      cyan,
+      transparent,
+      magenta,
+      transparent,
+      cyan);
+  animation: rotateLight 4s linear infinite;
+}
+
+
+.animated-linkedin-btn::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: white;
+  border-radius: 8px;
+}
+
+
+.btn-content {
+  position: relative;
+  z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  color: rgba(255, 255, 255, 0.45);
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 17px;
+  gap: 8px;
 }
 
-.social-btn:hover {
-  transform: translateY(-3px);
+@keyframes rotateLight {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.social-btn.linkedin { background: #007bb5; color: white; }
-.social-btn.youtube { background: #bb0000; color: white; }
-.social-btn.github { background: #2b2b2b; color: white; }
-.social-btn.instagram { background: #e1306c; color: white; }
+.animated-linkedin-btn:hover {
+  transform: scale(1.03);
+}
 
-/* ============================================================
-   --- REPARATII FINALE PENTRU MOBIL (2 COLOANE) ---
-   ============================================================ */
-@media (max-width: 576px) {
-  /* Reducem padding-ul containerului ca sa castigam spatiu pe laterale */
-  .frosted-glass-box {
-    padding: 20px 10px !important;
-  }
+.animated-linkedin-btn:hover::before {
+  animation-duration: 1.7s;
+  /* Accelereaza lumina la hover */
+}
+/* Stil foto */
+.my-image {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid cyan;
+  object-fit: cover;
+  flex-shrink: 0;
+}
 
-  /* Eliminam marginea fixa de 8px care "strivea" coloanele de 50% */
-  .product-wrapper {
-    margin: 5px 2px !important;
-    padding: 10px 5px !important;
-  }
+.text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
 
-  /* Imaginea produsului sa nu fie prea mare pe mobil */
-  .product-img {
-    max-width: 100px;
-    padding: 4px;
-  }
+.btn-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: cyan;
+  padding-top: 5px;
+}
 
-  /* Textul titlului sa nu rupa cardul */
-  .product-wrapper h3 {
-    font-size: 0.7rem !important;
-    white-space: nowrap;
-  }
-
-  /* Grupul de butoane sa fie flexibil si mai mic */
-  .btn-group-custom {
-    max-width: 100% !important;
-    padding: 0 !important;
-  }
-
-  .btn-left, .btn-right {
-    font-size: 0.6rem !important;
-    padding: 6px 2px !important;
-  }
-  
-  /* Ajustare Newsletter pe mobil */
-  .news-letter input[type="email"] {
-    width: 60% !important;
-    font-size: 0.75rem;
-  }
-  .news-letter input[type="submit"] {
-    width: 30% !important;
-    font-size: 0.75rem;
-  }
+/* Blocare inversare culori de catre browser */
+:root {
+  color-scheme: light only;
 }
