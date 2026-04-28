@@ -36,6 +36,14 @@ h3 {
   text-shadow: .8px .8px .8px black;
 }
 
+h4 {
+  color: cyan !important; 
+  border-bottom: 2px solid cyan; 
+  font-weight: 800 !important; 
+  display: inline-block; 
+  padding-bottom: 5px;
+}
+
 h6 {
   color: gold;
   text-shadow: .8px .8px .8px black;
@@ -201,34 +209,84 @@ h5 {
 /* ============================================================
    CONTACT
    ============================================================ */
-
-.custom-input {
-  border: 1px solid #ced4da;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  resize: none;
+/* Stiluri Generale */
+.custom-input, .custom-newsletter-group .form-control {
+    border: 2px solid cyan !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-.custom-input:focus {
-  border-color: cyan !important;
-  box-shadow: 0 0 0 0.25rem rgba(0, 255, 255, 0.1) !important;
-  outline: none;
+/* Butonul principal TRIMITE */
+.custom-btn {
+    background-color: #003388 !important;
+    color: gold !important;
+    text-shadow: 0.8px 0.8px 0.8px black;
+    border: 2px solid cyan !important;
+    border-radius: 8px;
 }
 
+.custom-btn:hover {
+    background-color: cyan !important;
+    color: #003388 !important;
+    text-shadow: none;
+}
+
+/* Newsletter Group - FIX PENTRU MOBIL */
+.custom-newsletter-group {
+    display: flex !important;
+    flex-wrap: nowrap !important; /* Forțăm rămânerea pe același rând */
+    width: 100%;
+}
+
+.custom-newsletter-group .form-control {
+    flex: 2; /* Input-ul va fi de 2 ori mai lat decât butonul */
+    min-width: 0; /* Evitare overflow */
+    border-radius: 8px 0 0 8px !important;
+    border-right: none !important;
+    padding: 0.5rem 1rem;
+}
+
+.custom-newsletter-group .btn {
+    flex: 1; /* Butonul ocupă restul spațiului ramas*/
+    background-color: #003388 !important;
+    color: gold !important;
+    text-shadow: 0.8px 0.8px 0.8px black;
+    border: 2px solid cyan !important;
+    border-radius: 0 8px 8px 0 !important;
+    white-space: nowrap; /* Împiedică cuvântul ACCEPT să sară pe rândul 2 */
+    padding: 0.5rem 10px;
+}
+
+.custom-newsletter-group .btn:hover {
+    background-color: cyan !important;
+    color: #003388 !important;
+    text-shadow: none;
+}
+
+/* Ajustare font pe ecrane foarte mici ca să nu se înghesuie textul */
+@media (max-width: 380px) {
+    .custom-newsletter-group .form-control, 
+    .custom-newsletter-group .btn {
+        font-size: 0.85rem;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
 
 /* ============================================================
    FOOTER
    ============================================================ */
 
 footer ul li {
+  font-weight: 700;
   margin-bottom: 8px;
   cursor: pointer;
   transition: color 0.3s ease;
-  color: #bbb;
+  color: cyan;
 }
 
 footer ul li:hover {
-  color: red !important;
+  color: gold !important;
 }
 
 /* SPATIU INTRE SECTIUNI */
@@ -237,76 +295,6 @@ footer ul li:hover {
     margin-top: 3rem;
   }
 }
-
-/* EFECT HOVER BUTOANE */
-.custom-btn {
-  background-color: #003388;
-  color: gold !important;
-  text-shadow: .8px .8px .8px black;
-  border: 2px solid cyan;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.custom-btn:hover {
-  background-color: cyan;
-  color: #003388 !important;
-}
-
-.news-letter input {
-  margin-top: 8px;
-  color: gold !important;
-  text-shadow: .8px .8px .8px black;
-}
-
-.news-letter input[type="email"] {
-  width: 53%;
-  background-color: white;
-  color: cyan;
-  padding: 8px;
-  border-radius: 8px 0 0 8px;
-  border: 2px solid cyan;
-}
-
-@media only screen and (min-width: 768px) {
-  .news-letter input[type="email"] {
-    width: 35%;
-  }
-}
-
-.news-letter input[type="submit"] {
-  width: 35%;
-  background-color: #003388;
-  color: cyan;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 8px;
-  border-radius: 0 8px 8px 0;
-  border: 2px solid cyan;
-  margin-left: -3px;
-}
-
-.news-letter input[type="submit"]:hover {
-  background-color: cyan !important;
-}
-
-@media only screen and (min-width: 768px) {
-  .news-letter input[type="submit"] {
-    width: 17%;
-  }
-}
-
-/* Ajustare Newsletter pe mobil */
-.news-letter input[type="email"] {
-  width: 60% !important;
-  font-size: 0.75rem;
-}
-
-.news-letter input[type="submit"] {
-  width: 30% !important;
-  font-size: 0.75rem;
-}
-
 
 /* ── SOCIAL MEDIA BUTTON ── */
 .linkedin-container {
@@ -344,7 +332,6 @@ footer ul li:hover {
   animation: rotateLight 4s linear infinite;
 }
 
-
 .animated-linkedin-btn::after {
   content: '';
   position: absolute;
@@ -352,7 +339,6 @@ footer ul li:hover {
   background: white;
   border-radius: 8px;
 }
-
 
 .btn-content {
   position: relative;

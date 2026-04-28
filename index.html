@@ -235,67 +235,66 @@
                 <div class="row g-5">
                     <div class="col-lg-6">
                         <div class="p-4 shadow border-0 rounded-4 bg-white h-100">
-                            <h3 class="mb-4 fw-bold">
-                                Trimite un mesaj</h3>
+                            <h3 class="mb-4 fw-bold">Trimite un mesaj</h3>
                             <form action="#" onsubmit="return false;">
                                 <div class="mb-3">
-                                    <h5 class="form-label fw-semibold">
-                                        👤 Nume</h5>
-                                    <input type="text" class="form-control custom-input" placeholder="Nume si prenume"
+                                    <h5 class="form-label fw-semibold">👤 Nume</h5>
+                                    <input type="text" class="form-control custom-input py-2"
+                                        placeholder="Nume si prenume"
                                         onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
                                 </div>
                                 <div class="mb-3">
-                                    <h5 class="form-label fw-semibold">
-                                        📧 Email</h5>
-                                    <input type="email" class="form-control custom-input" placeholder="nume@email.ro"
+                                    <h5 class="form-label fw-semibold">📧 Email</h5>
+                                    <input type="email" class="form-control custom-input py-2"
+                                        placeholder="nume@email.ro"
                                         onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
                                 </div>
                                 <div class="mb-3">
-                                    <h5 class="form-label fw-semibold">
-                                        💬 Mesaj</h5>
-                                    <textarea class="form-control custom-input" rows="4"
+                                    <h5 class="form-label fw-semibold">💬 Mesaj</h5>
+                                    <textarea class="form-control custom-input py-2" rows="4"
                                         placeholder="Scrie mesajul tău aici..."
                                         onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')"></textarea>
-                                </div><br>
+                                </div>
                                 <div class="text-center mt-4">
-                                    <button type="button" id="btn-trimite" class="btn fw-bold px-5 py-2 custom-btn">
+                                    <button type="button" id="btn-trimite" class="btn fw-bold px-5 py-2 custom-btn" style="margin-top: 17px;">
                                         TRIMITE
                                     </button>
                                 </div>
                             </form>
                         </div>
                     </div>
+
                     <div class="col-lg-6">
-                        <div class="p-4 shadow border-0 rounded-4 bg-white h-100">
-                            <h3 class="fw-bold mb-4">
-                                Unde ne găsiți?</h3>
-                            <div class="mb-4">
-                                <h5 class="fw-semibold mb-1">
-                                    📧 Email depart. suport</h5>
-                                <p class="text-muted">contact@chatbot-consultant-CT.ro</p>
+                        <div
+                            class="p-4 shadow border-0 rounded-4 bg-white h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="fw-bold mb-4">Unde ne găsiți?</h3>
+                                <div class="mb-4">
+                                    <h5 class="fw-semibold mb-1">📧 Email depart. suport</h5>
+                                    <p class="text-muted">contact@chatbot-consultant-CT.ro</p>
+                                </div>
+                                <div class="mb-4">
+                                    <h5 class="fw-semibold mb-1">🏢 Adresă sediu central</h5>
+                                    <p class="text-muted">Strada Chatbot, Nr. 1, București</p>
+                                </div>
+                                <div class="mb-4">
+                                    <h5 class="fw-semibold mb-1">🏭 Adresă fabrică ciment</h5>
+                                    <p class="text-muted">Zona Industrială, strada Chatbot</p>
+                                </div>
+                                <div class="mb-4">
+                                    <h5 class="fw-semibold mb-1">📞 Telefon sediu central</h5>
+                                    <p class="text-muted">+40 123 456 789</p>
+                                </div>
                             </div>
-                            <div class="mb-4">
-                                <h5 class="fw-semibold mb-1">
-                                    🏢 Adresă sediu central</h5>
-                                <p class="text-muted">Strada Chatbot, Nr. 1, București</p>
-                            </div>
-                            <div class="mb-4">
-                                <h5 class="fw-semibold mb-1">
-                                    🏭 Adresă fabrică ciment</h5>
-                                <p class="text-muted">Zona Industrială, strada Chatbot</p>
-                            </div>
-                            <div class="mb-4">
-                                <h5 class="fw-semibold mb-1">
-                                    📞 Telefon sediu central</h5>
-                                <p class="text-muted">+40 123 456 789</p>
-                            </div><br>
-                            <div class="mb-4">
-                                <h5 style="font-weight: 500; margin-top: 8px;">
-                                    Aboneaza-te la Newsletter</h5>
-                                <form class="news-letter" id="demo-form">
-                                    <input class="text-center" type="email" name="news-email" id="news-email"
+
+                            <div class="mt-4">
+                                <h5 class="fw-bold mb-3">Aboneaza-te la Newsletter</h5>
+                                <form class="input-group custom-newsletter-group" id="demo-form">
+                                    <input type="email" class="form-control fw-bold shadow-none" name="news-email"
                                         placeholder="nume@email.ro" required>
-                                    <input type="submit" value="ACCEPT">
+                                    <button class="btn fw-bold px-4" type="submit">
+                                        ACCEPT
+                                    </button>
                                 </form>
                             </div>
                         </div>
@@ -309,8 +308,7 @@
         <div class="container text-center">
             <div class="row row-g-3 row-cols-md-3 g-4 text-center">
                 <div class="col">
-                    <h4 class="h6 fw-bold mb-3"
-                        style="color: cyan; border-bottom: 2px solid cyan; display: inline-block; padding-bottom: 5px;">
+                    <h4 class="h6 fw-bold mb-3">
                         RESURSE</h4>
                     <ul class="list-unstyled">
                         <li>Rețete</li>
@@ -320,8 +318,7 @@
                     </ul>
                 </div>
                 <div class="col">
-                    <h4 class="h6 fw-bold mb-3"
-                        style="color: cyan; border-bottom: 2px solid cyan; display: inline-block; padding-bottom: 5px;">
+                    <h4 class="h6 fw-bold mb-3">
                         COMPANIE</h4>
                     <ul class="list-unstyled">
                         <li>Istoric</li>
@@ -331,8 +328,7 @@
                     </ul>
                 </div>
                 <div class="col">
-                    <h4 class="h6 fw-bold mb-3"
-                        style="color: cyan; border-bottom: 2px solid cyan; display: inline-block; padding-bottom: 5px;">
+                    <h4 class="h6 fw-bold mb-3">
                         SUPORT</h4>
                     <ul class="list-unstyled">
                         <li>Comenzi</li>
