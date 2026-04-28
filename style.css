@@ -277,16 +277,17 @@ h5 {
    FOOTER
    ============================================================ */
 
-footer ul li {
-  font-weight: 700;
+footer ul li a {
+  font-weight: 500;
   margin-bottom: 8px;
   cursor: pointer;
   transition: color 0.3s ease;
-  color: cyan;
+  color: gold;
+  text-decoration: none;
 }
 
-footer ul li:hover {
-  color: gold !important;
+footer ul li a:hover {
+  color: cyan !important;
 }
 
 /* SPATIU INTRE SECTIUNI */
