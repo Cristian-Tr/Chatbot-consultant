@@ -14,6 +14,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 /* Blocare inversare culori de catre browser */
 :root {
   color-scheme: light only;
@@ -37,10 +38,10 @@ h3 {
 }
 
 h4 {
-  color: cyan !important; 
-  border-bottom: 2px solid cyan; 
-  font-weight: 800 !important; 
-  display: inline-block; 
+  color: cyan !important;
+  border-bottom: 2px solid cyan;
+  font-weight: 800 !important;
+  display: inline-block;
   padding-bottom: 5px;
 }
 
@@ -138,7 +139,7 @@ h5 {
   background: transparent !important;
 }
 
-.frosted-glass-box {
+.blue-box {
   width: 98%;
   background: #003388 !important;
   backdrop-filter: blur(15px) !important;
@@ -210,67 +211,74 @@ h5 {
    CONTACT
    ============================================================ */
 /* Stiluri Generale */
-.custom-input, .custom-newsletter-group .form-control {
-    border: 2px solid cyan !important;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+.custom-input,
+.custom-newsletter-group .form-control {
+  border: 2px solid cyan !important;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 /* Butonul principal TRIMITE */
 .custom-btn {
-    background-color: #003388 !important;
-    color: gold !important;
-    text-shadow: 0.8px 0.8px 0.8px black;
-    border: 2px solid cyan !important;
-    border-radius: 8px;
+  background-color: #003388 !important;
+  color: gold !important;
+  text-shadow: 0.8px 0.8px 0.8px black;
+  border: 2px solid cyan !important;
+  border-radius: 8px;
 }
 
 .custom-btn:hover {
-    background-color: cyan !important;
-    color: #003388 !important;
-    text-shadow: none;
+  background-color: cyan !important;
+  color: #003388 !important;
+  text-shadow: none;
 }
 
 /* Newsletter Group - FIX PENTRU MOBIL */
 .custom-newsletter-group {
-    display: flex !important;
-    flex-wrap: nowrap !important; /* Forțăm rămânerea pe același rând */
-    width: 100%;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  /* Forțăm rămânerea pe același rând */
+  width: 100%;
 }
 
 .custom-newsletter-group .form-control {
-    flex: 2; /* Input-ul va fi de 2 ori mai lat decât butonul */
-    min-width: 0; /* Evitare overflow */
-    border-radius: 8px 0 0 8px !important;
-    border-right: none !important;
-    padding: 0.5rem 1rem;
+  flex: 2;
+  /* Input-ul va fi de 2 ori mai lat decât butonul */
+  min-width: 0;
+  /* Evitare overflow */
+  border-radius: 8px 0 0 8px !important;
+  border-right: none !important;
+  padding: 0.5rem 1rem;
 }
 
 .custom-newsletter-group .btn {
-    flex: 1; /* Butonul ocupă restul spațiului ramas*/
-    background-color: #003388 !important;
-    color: gold !important;
-    text-shadow: 0.8px 0.8px 0.8px black;
-    border: 2px solid cyan !important;
-    border-radius: 0 8px 8px 0 !important;
-    white-space: nowrap; /* Împiedică cuvântul ACCEPT să sară pe rândul 2 */
-    padding: 0.5rem 10px;
+  flex: 1;
+  /* Butonul ocupă restul spațiului ramas*/
+  background-color: #003388 !important;
+  color: gold !important;
+  text-shadow: 0.8px 0.8px 0.8px black;
+  border: 2px solid cyan !important;
+  border-radius: 0 8px 8px 0 !important;
+  white-space: nowrap;
+  /* Împiedică cuvântul ACCEPT să sară pe rândul 2 */
+  padding: 0.5rem 10px;
 }
 
 .custom-newsletter-group .btn:hover {
-    background-color: cyan !important;
-    color: #003388 !important;
-    text-shadow: none;
+  background-color: cyan !important;
+  color: #003388 !important;
+  text-shadow: none;
 }
 
 /* Ajustare font pe ecrane foarte mici ca să nu se înghesuie textul */
 @media (max-width: 380px) {
-    .custom-newsletter-group .form-control, 
-    .custom-newsletter-group .btn {
-        font-size: 0.85rem;
-        padding-left: 5px;
-        padding-right: 5px;
-    }
+
+  .custom-newsletter-group .form-control,
+  .custom-newsletter-group .btn {
+    font-size: 0.85rem;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
 
 /* ============================================================
@@ -307,13 +315,13 @@ footer ul li a:hover {
 .animated-linkedin-btn {
   position: relative;
   width: 287px;
-  height: 53px;
+  height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: transparent;
   text-decoration: none !important;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
 }
@@ -322,15 +330,15 @@ footer ul li a:hover {
 .animated-linkedin-btn::before {
   content: '';
   position: absolute;
-  width: 200%;
-  height: 600%;
+  width: 170%;
+  height: 450%;
   background: conic-gradient(transparent,
       cyan,
       transparent,
       magenta,
       transparent,
       cyan);
-  animation: rotateLight 4s linear infinite;
+  animation: rotateLight 3s linear infinite;
 }
 
 .animated-linkedin-btn::after {
@@ -343,12 +351,12 @@ footer ul li a:hover {
 
 .btn-content {
   position: relative;
-  z-index: 10;
+  z-index: 8;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0 17px;
+  padding: 0 8px;
   gap: 8px;
 }
 
@@ -368,14 +376,14 @@ footer ul li a:hover {
 
 .animated-linkedin-btn:hover::before {
   animation-duration: 1.7s;
-  /* Accelereaza lumina la hover */
 }
+
 /* Stil foto */
 .my-image {
-  width: 34px;
-  height: 34px;
+  width: 33px;
+  height: 33px;
   border-radius: 50%;
-  border: 2px solid cyan;
+  border: 1px solid cyan;
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -384,11 +392,11 @@ footer ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .btn-title {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: cyan;
   padding-top: 5px;
