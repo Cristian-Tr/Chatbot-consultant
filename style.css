@@ -211,6 +211,12 @@ h5 {
    CONTACT
    ============================================================ */
 /* Stiluri Generale */
+#form-text {
+  font-size: 1.2rem;
+    color: cyan;
+  text-shadow: .8px .8px .8px black;
+}
+
 .custom-input,
 .custom-newsletter-group .form-control {
   border: 2px solid cyan !important;
@@ -399,7 +405,39 @@ footer ul li a:hover {
   font-size: 1.25rem;
   font-weight: 800;
   color: cyan;
-  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.text-animation {
+	fill: transparent;
+	stroke-width: 1;
+	stroke: white;
+	stroke-dasharray: 250 50;
+	animation: colorRotation 8s linear infinite;
+}
+
+@keyframes colorRotation {
+	0% {
+		stroke: white;
+		stroke-dashoffset: 1000;
+	}
+
+	35% {
+		stroke: gold;
+	}
+
+	70% {
+		stroke: cyan;
+	}
+
+	70.1% {
+		stroke: white;
+	}
+
+	100% {
+		stroke: white;
+		stroke-dashoffset: 0;
+	}
 }
 
 /* Blocare inversare culori de catre browser */

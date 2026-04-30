@@ -9,6 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const TIMEOUT_MS = 8000;
     window.step = "start";
 
+    window.onscroll = function () {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            let pb = document.getElementById("progress-bar");
+            if (pb) pb.style.width = scrolled + "%";
+        };
+
     class TextScramble {
     constructor(el) {
       this.el = el

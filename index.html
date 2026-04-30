@@ -16,6 +16,8 @@
     <link rel="preload" as="image" href="residential-area.webp" fetchpriority="high">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="chatbot.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" defer></script>
     <script src="chatbot.js" defer></script>
     <script type="application/ld+json">
     {
@@ -93,20 +95,24 @@
             <div class="container">
                 <h3 style="color: cyan;">DEMO LANDING PAGE</h3>
                 <a href="https://cristian-tr.github.io/Cristian-T-Portfolio/"
-                    style="font-size: 1rem; background-color: cyan; border-radius: 17px; color: white; font-weight: 800; padding-left: 17px; padding-right: 17px; text-decoration: none;">
+                    aria-label="Vizitează portofoliul meu GitHub"
+                    style="font-size: 1rem; background-color: cyan; border-radius: 17px; color: white; font-weight: 800; padding-left: 17px; padding-right: 16px; text-decoration: none;">
                     CRISTIAN T <img src="my-photo.jpg" alt="My picture" style="width: clamp(35px, 8vw, 53px); height: clamp(35px, 8vw, 53px); 
                                    border-radius: 50%; margin-bottom: 7px; object-fit: cover; border: 1px solid cyan;">
                     PORTFOLIO</a>
                 <!-- CALL TO ACTION SVG TEXT - START-->
-                <div style="width: 287px; margin: auto; margin-top: -5px; ">
+                <div style="width: 287px; margin: auto;">
                     <svg viewBox="0 0 450 60"
-                        style="width: 100%; overflow: visible; font-weight: 800; font-size: 1.7rem;">
+                        style="width: 100%; overflow: visible; font-weight: 700; font-size: 1.9rem;">
                         <symbol id="portfolio-text">
-                            <text text-anchor="middle" x="50%" y="50%" dy=".35em">
-                                Click to discover my projects!</text>
+                            <text text-anchor="middle" x="50%" y="50%" dy=".1em">
+                                DISCOVER MY PROJECTS!
+                            </text>
                         </symbol>
-                        <use xlink:href="#portfolio-text" fill="white" stroke="cyan"></use>
-                        <use xlink:href="#portfolio-text" fill="transparent" stroke-dasharray="none"></use>
+                        <!-- CULOARE FUNDAL TEXT -->
+                        <use xlink:href="#portfolio-text" fill="cyan"></use>
+                        <!-- CULOARE CONTUR TEXT ANIMAT -->
+                        <use xlink:href="#portfolio-text" class="text-animation"></use>
                     </svg>
                 </div>
             </div>
@@ -124,8 +130,8 @@
                         <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
                             <img src="proiectare.webp" width="1024" height="1024" alt="Ciment"
                                 class="img-fluid rounded mb-2 product-img">
-                            <h3 class="h6 mb-2">PROIECTARE</h3>
-                            <h6>★★★★☆ 4.0</h6>
+                            <h3 class="h6 mb-2">PROIECTARE</br>
+                            ★★★★☆ 4.0</h3>
                             <div class="btn-group-custom"
                                 onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
                                 <button class="btn-left">COMANDA</button>
@@ -137,8 +143,8 @@
                         <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
                             <img src="suport.webp" width="1024" height="1024" alt="Beton"
                                 class="img-fluid rounded mb-2 product-img">
-                            <h3 class="h6 mb-2">ECHIPAMENT</h3>
-                            <h6>★★★★★ 5.0</h6>
+                            <h3 class="h6 mb-2">ECHIPAMENT</br>
+                            ★★★★★ 5.0</h3>
                             <div class="btn-group-custom"
                                 onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
                                 <button class="btn-left">COMANDA</button>
@@ -150,8 +156,8 @@
                         <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
                             <img src="transport.webp" width="1024" height="1024" alt="Mortar"
                                 class="img-fluid rounded mb-2 product-img">
-                            <h3 class="h6 mb-2">TRANSPORT</h3>
-                            <h6>★★★★☆ 4.1</h6>
+                            <h3 class="h6 mb-2">TRANSPORT</br>
+                            ★★★★☆ 4.1</h3>
                             <div class="btn-group-custom"
                                 onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
                                 <button class="btn-left">COMANDA</button>
@@ -163,8 +169,8 @@
                         <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
                             <img src="inchiriere.webp" width="1024" height="1024" alt="Agregate"
                                 class="img-fluid rounded mb-2 product-img">
-                            <h3 class="h6 mb-2">ÎNCHIRIERE</h3>
-                            <h6>★★★★☆ 4.0</h6>
+                            <h3 class="h6 mb-2">ÎNCHIRIERE</br>
+                            ★★★★☆ 4.0</h3>
                             <div class="btn-group-custom"
                                 onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
                                 <button class="btn-left">COMANDA</button>
@@ -185,8 +191,8 @@
                         <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
                             <img src="ciment.webp" width="1024" height="1024" alt="Ciment"
                                 class="img-fluid rounded mb-2 product-img">
-                            <h3 class="h6 mb-2">CIMENT</h3>
-                            <h6>★★★★★ 4.9</h6>
+                            <h3 class="h6 mb-2">CIMENT</br>
+                            ★★★★★ 4.9</h3>
                             <div class="btn-group-custom"
                                 onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
                                 <button class="btn-left">COMANDA</button>
@@ -198,8 +204,8 @@
                         <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
                             <img src="beton.webp" width="1024" height="1024" alt="Beton"
                                 class="img-fluid rounded mb-2 product-img">
-                            <h3 class="h6 mb-2">BETON</h3>
-                            <h6>★★★★☆ 4.1</h6>
+                            <h3 class="h6 mb-2">BETON</br>
+                            ★★★★☆ 4.1</h3>
                             <div class="btn-group-custom"
                                 onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
                                 <button class="btn-left">COMANDA</button>
@@ -211,8 +217,8 @@
                         <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
                             <img src="mortar.webp" width="1024" height="1024" alt="Mortar"
                                 class="img-fluid rounded mb-2 product-img">
-                            <h3 class="h6 mb-2">MORTAR</h3>
-                            <h6>★★★★☆ 3.9</h6>
+                            <h3 class="h6 mb-2">MORTAR</br>
+                            ★★★★☆ 3.9</h3>
                             <div class="btn-group-custom"
                                 onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
                                 <button class="btn-left">COMANDA</button>
@@ -224,8 +230,8 @@
                         <div class="product-wrapper p-2 border rounded shadow-sm bg-white h-100">
                             <img src="agregate.webp" width="1024" height="1024" alt="Agregate"
                                 class="img-fluid rounded mb-2 product-img">
-                            <h3 class="h6 mb-2">AGREGATE</h3>
-                            <h6>★★★★★ 4.9</h6>
+                            <h3 class="h6 mb-2">AGREGATE<br>
+                            ★★★★★ 4.9</h3>
                             <div class="btn-group-custom"
                                 onclick="alert('Acesta este un website demo. Nu se pot trimite comenzi!')">
                                 <button class="btn-left">COMANDA</button>
@@ -251,25 +257,26 @@
                             <h3 class="mb-4 fw-bold">Trimite un mesaj</h3>
                             <form action="#" onsubmit="return false;">
                                 <div class="mb-3">
-                                    <h5 class="form-label fw-semibold">👤 Nume</h5>
+                                    <div class="form-label fw-semibold" id="form-text">👤 Nume</div>
                                     <input type="text" class="form-control custom-input py-2"
                                         placeholder="Nume si prenume"
-                                        onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
+                                        onclick="alert('Acesta este un site demo! Nu se pot trimite comenzi!')">
                                 </div>
                                 <div class="mb-3">
-                                    <h5 class="form-label fw-semibold">📧 Email</h5>
+                                    <div class="form-label fw-semibold" id="form-text">📧 Email</div>
                                     <input type="email" class="form-control custom-input py-2"
                                         placeholder="nume@email.ro"
-                                        onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')">
+                                        onclick="alert('Acesta este un site demo! Nu se pot trimite comenzi!')">
                                 </div>
                                 <div class="mb-3">
-                                    <h5 class="form-label fw-semibold">💬 Mesaj</h5>
+                                    <div class="form-label fw-semibold" id="form-text">💬 Mesaj</div>
                                     <textarea class="form-control custom-input py-2" rows="4"
                                         placeholder="Scrie mesajul tău aici..."
-                                        onclick="alert('Acesta este un website demo! Nu se pot trimite date personale!')"></textarea>
+                                        onclick="alert('Acesta este un site demo! Nu se pot trimite comenzi!')"></textarea>
                                 </div>
                                 <div class="text-center mt-4">
                                     <button type="button" id="btn-trimite" class="btn fw-bold px-5 py-2 custom-btn"
+                                        onclick="alert('Acesta este un site demo! Nu se pot trimite comenzi!')"
                                         style="margin-top: 17px;">
                                         TRIMITE
                                     </button>
@@ -284,29 +291,30 @@
                             <div>
                                 <h3 class="fw-bold mb-4">Unde ne găsiți?</h3>
                                 <div class="mb-4">
-                                    <h5 class="fw-semibold mb-1">📧 Email depart. suport</h5>
+                                    <div class="fw-semibold mb-1" id="form-text">📧 Email depart. suport</div>
                                     <p class="text-muted">contact@chatbot-consultant-CT.ro</p>
                                 </div>
                                 <div class="mb-4">
-                                    <h5 class="fw-semibold mb-1">🏢 Adresă sediu central</h5>
+                                    <div class="fw-semibold mb-1" id="form-text">🏢 Adresă sediu central</div>
                                     <p class="text-muted">Strada Chatbot, Nr. 1, București</p>
                                 </div>
                                 <div class="mb-4">
-                                    <h5 class="fw-semibold mb-1">🏭 Adresă fabrică ciment</h5>
+                                    <div class="fw-semibold mb-1" id="form-text">🏭 Adresă fabrică ciment</div>
                                     <p class="text-muted">Zona Industrială, strada Chatbot</p>
                                 </div>
                                 <div class="mb-4">
-                                    <h5 class="fw-semibold mb-1">📞 Telefon sediu central</h5>
+                                    <div class="fw-semibold mb-1" id="form-text">📞 Telefon sediu central</div>
                                     <p class="text-muted">+40 123 456 789</p>
                                 </div>
                             </div>
 
                             <div class="mt-4">
-                                <h5 class="fw-bold mb-3">Aboneaza-te la Newsletter</h5>
+                                <div class="fw-bold mb-3" id="form-text">Aboneaza-te la Newsletter</div>
                                 <form class="input-group custom-newsletter-group" id="demo-form">
                                     <input type="email" class="form-control fw-bold shadow-none" name="news-email"
                                         placeholder="nume@email.ro" required>
-                                    <button class="btn fw-bold px-4" type="submit">
+                                    <button class="btn fw-bold px-4" type="submit"
+                                        onclick="alert('Acesta este un site demo! Nu se pot trimite comenzi!')">
                                         ACCEPT
                                     </button>
                                 </form>
@@ -392,7 +400,7 @@
                             <div class="btn-content">
                                 <img src="./my-photo.jpg" alt="My photo" class="my-image">
                                 <div class="text-group">
-                                    <h5 class="btn-title">Cristian T Profile</h5>
+                                    <div class="btn-title">Cristian T Profile</div>
                                 </div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
                                     fill="#0077b5">
@@ -405,13 +413,16 @@
                     <!-- CALL TO ACTION SVG TEXT - START-->
                     <div style="width: 287px; margin: auto;">
                         <svg viewBox="0 0 450 60"
-                            style="width: 100%; overflow: visible; font-weight: 800; font-size: 1.7rem;">
+                            style="width: 100%; overflow: visible; font-weight: 700; font-size: 1.9rem;">
                             <symbol id="profile-text">
-                                <text text-anchor="middle" x="50%" y="50%" dy=".35em">
-                                    Passionate about digital tech!</text>
+                                <text text-anchor="middle" x="50%" y="50%" dy=".1em">
+                                    Passionate about digital tech!
+                                </text>
                             </symbol>
-                            <use xlink:href="#profile-text" fill="white" stroke="cyan"></use>
-                            <use xlink:href="#profile-text" fill="transparent" stroke-dasharray="none"></use>
+                            <!-- CULOARE FUNDAL TEXT -->
+                            <use xlink:href="#profile-text" fill="cyan"></use>
+                            <!-- CULOARE CONTUR TEXT ANIMAT -->
+                            <use xlink:href="#profile-text" class="text-animation"></use>
                         </svg>
                     </div>
                     <!-- MY LINKEDIN ACCOUNT LINK & CTA SVG TEXT - END-->
@@ -459,29 +470,6 @@
         </div>
     </div>
 
-    <script>
-        window.onscroll = function () {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            let pb = document.getElementById("progress-bar");
-            if (pb) pb.style.width = scrolled + "%";
-        };
-    </script>
-    <script src="chatbot.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script>
-
-        // Pentru butonul separat "TRIMITE"
-        document.getElementById('btn-trimite').addEventListener('click', function () {
-            alert('Acesta este un website demo! Nu se pot trimite date personale!');
-        });
-        // Pentru formularul de newsletter
-        document.getElementById('demo-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            alert('Acesta este un website demo! Nu se pot trimite date personale!');
-        });
-    </script>
 </body>
 
 </html>
