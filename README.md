@@ -1,7 +1,9 @@
 🚀 Chatbot Consultant - Landing Page
 
 📈 Rezultate Audit Lighthouse
+
 🖥️ DESKTOP: Performance: 94 | Accesibility: 96 | Best practices: 100 | SEO: 100
+
 📱 MOBILE:  Performance: 51 | Accesibility: 96 | Best practices: 100 | SEO: 100
 
 🛠️ Tehnologii Utilizate
