@@ -1,5 +1,4 @@
-🚀 Chatbot Consultant
-Proiect de Landing Page construit cu Bootstrap 5, cu accent pe toate criteriile de audit (SEO, Best practices,accesibilitate și performanță).
+🚀 Chatbot Consultant - Landing Page
 
 📈 Rezultate Audit Lighthouse
 🖥️ DESKTOP: Performance: 94 | Accesibility: 96 | Best practices: 100 | SEO: 100
@@ -8,6 +7,7 @@ Proiect de Landing Page construit cu Bootstrap 5, cu accent pe toate criteriile 
 🛠️ Tehnologii Utilizate
 HTML5 & CSS3 (Custom styling & Bootstrap 5) 🎨
 JavaScript (Interacțiuni și funcționalități UI) ⚡
+GIMP (Prelucrare imagini in format .webp) 🖌️
 Dev Tools (Audit și optimizare) 📊
 
 🖥️>💻>📱 Responsive web design (RWD): Am proiectat un design adaptabil pe orice dispozitiv.
