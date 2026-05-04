@@ -4,9 +4,9 @@ Link: https://cristian-tr.github.io/Chatbot-consultant/
 
 📈 Rezultate Audit Lighthouse
 
-🖥️ DESKTOP: Performance: 94 | Accesibility: 96 | Best practices: 100 | SEO: 100
+🖥️ DESKTOP: Performance: 98 | Accesibility: 96 | Best practices: 100 | SEO: 100
 
-📱 MOBILE:  Performance: 51 | Accesibility: 96 | Best practices: 100 | SEO: 100
+📱 MOBILE:  Performance: 55 | Accesibility: 96 | Best practices: 100 | SEO: 100
 
 🛠️ Tehnologii Utilizate
 HTML5 & CSS3 (Custom styling & Bootstrap 5) 🎨
