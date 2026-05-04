@@ -146,7 +146,7 @@ h5 {
   -webkit-backdrop-filter: blur(15px) !important;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  padding: 35px 17px 35px 17px;
+  padding: 35px 8px 35px 8px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   color: #ffffff !important;
 }
@@ -157,11 +157,12 @@ h5 {
   flex-direction: column;
   align-items: center;
   background-color: white;
-  margin: 8px;
+  margin: 0 auto;
 }
 
 .product-wrapper:hover {
-  transform: scale(1.07);
+  transform: scale(1.034);
+  filter: brightness(1.07);
 }
 
 .product-img {
@@ -207,13 +208,84 @@ h5 {
   color: #003366;
 }
 
+
+/* ============================================================
+   LOGIN
+   ============================================================ */
+
+/* LOGIN BUTTON */
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 12px auto;
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+#buttonLogin {
+  background-color: #003388;
+  color: cyan;
+  width: 75px;
+  height: 75px;
+  font-size: 13.5px;
+  text-shadow: 0.5px 0.5px 0.5px blue;
+  font-weight: 800;
+  text-align: center;
+  border-radius: 50%;
+  padding-bottom: 8px;
+  border: 1px solid black;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 1),
+    inset 0 0.25em 0.3em rgba(255, 255, 255, 0.35),
+    inset 0 -0.25em 0.3em rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+#buttonLogin:hover {
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 1), inset 0 0.1em 0.3em rgba(0, 0, 0, 0.5),
+    inset 0 -0.1em 0.3em rgba(0, 0, 0, 0.5);
+  background-color: cyan;
+  color: gold;
+}
+
+.button-frames {
+  background: cyan;
+  box-shadow: inset 0 0.25em 0.125em rgba(32, 144, 255, 0.35),
+    inset 0 -0.25em 0.125em rgba(0, 0, 255, 0.35);
+  display: block;
+  border-radius: 50%;
+  margin-top: 1px;
+  padding: 10px;
+  width: 95px;
+  height: 95px;
+  z-index: 20;
+}
+
+.button-frame {
+  margin-top: 1px;
+  width: 95px;
+  height: 95px;
+  border: 10px solid cyan;
+  box-shadow: inset 0 0.25em 0.125em rgba(32, 144, 255, 0.35),
+    inset 0 -0.25em 0.125em rgba(0, 0, 255, 0.35);
+  border-radius: 50%;
+  border-right-color: transparent;
+  transform: rotate(0deg);
+  z-index: 35;
+}
+
 /* ============================================================
    CONTACT
    ============================================================ */
 /* Stiluri Generale */
 #form-text {
   font-size: 1.2rem;
-    color: cyan;
+  color: cyan;
   text-shadow: .8px .8px .8px black;
 }
 
@@ -409,35 +481,35 @@ footer ul li a:hover {
 }
 
 .text-animation {
-	fill: transparent;
-	stroke-width: 1;
-	stroke: white;
-	stroke-dasharray: 250 50;
-	animation: colorRotation 8s linear infinite;
+  fill: transparent;
+  stroke-width: 1;
+  stroke: white;
+  stroke-dasharray: 250 50;
+  animation: colorRotation 8s linear infinite;
 }
 
 @keyframes colorRotation {
-	0% {
-		stroke: white;
-		stroke-dashoffset: 1000;
-	}
+  0% {
+    stroke: gold;
+    stroke-dashoffset: 1000;
+  }
 
-	35% {
-		stroke: gold;
-	}
+  35% {
+    stroke: gold;
+  }
 
-	70% {
-		stroke: cyan;
-	}
+  70% {
+    stroke: cyan;
+  }
 
-	70.1% {
-		stroke: white;
-	}
+  70.1% {
+    stroke: white;
+  }
 
-	100% {
-		stroke: white;
-		stroke-dashoffset: 0;
-	}
+  100% {
+    stroke: gold;
+    stroke-dashoffset: 0;
+  }
 }
 
 /* Blocare inversare culori de catre browser */
