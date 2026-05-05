@@ -490,12 +490,12 @@ footer ul li a:hover {
 
 @keyframes colorRotation {
   0% {
-    stroke: gold;
+    stroke: white;
     stroke-dashoffset: 1000;
   }
 
   35% {
-    stroke: gold;
+    stroke: white;
   }
 
   70% {
@@ -503,11 +503,11 @@ footer ul li a:hover {
   }
 
   70.1% {
-    stroke: white;
+    stroke: cyan;
   }
 
   100% {
-    stroke: gold;
+    stroke: white;
     stroke-dashoffset: 0;
   }
 }
