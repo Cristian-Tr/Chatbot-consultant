@@ -142,7 +142,7 @@ h3 .h6 mb-2 {
     padding-left: 17px; 
     padding-right: 17px; 
     text-decoration: none; 
-    padding-bottom: 1px;
+    padding-bottom: .1px;
 }
 /* ============================================================
    SECTIUNI PRODUSE/SERVICII
@@ -490,9 +490,9 @@ footer ul li a:hover {
 .btn-title {
   font-size: 1.25rem;
   font-weight: 800;
-  text-shadow: 1px 1px 1px black;
-  color: cyan;
-  padding-bottom: 5px;
+  text-shadow: .1px .1px .1px black;
+  color: royalblue;
+  padding-bottom: 3px;
 }
 
 .text-animation {
