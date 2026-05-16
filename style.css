@@ -33,8 +33,8 @@ h2 {
 }
 
 h3 {
-  color: cyan !important;
-  text-shadow: .8px .8px .8px black;
+  color: #003388 !important;
+  text-shadow: .3px .3px .3px black;
 }
 
 h4 {
@@ -55,6 +55,10 @@ h5 {
   text-shadow: .8px .8px .8px black;
 }
 
+h3 .h6 mb-2 {
+  font-size: 1rem;
+  color: #003388 !important;
+}
 /* ============================================================
    PROGRESS BAR
    ============================================================ */
@@ -121,7 +125,7 @@ h5 {
   color: cyan;
   font-weight: 900;
   text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0, 51, 102, 0.9), -1px -1px 0px #003366, 1px -1px 0px #003366;
+  text-shadow: 2px 2px 4px rgba(0, 51, 102, 0.9), -1px -1px 0px #003388, 1px -1px 0px #003366;
 }
 
 @media (min-width: 1200px) {
@@ -130,6 +134,16 @@ h5 {
   }
 }
 
+.my-link {
+    font-size: 1rem; 
+    background-color: azure; 
+    border-radius: 17px; color: #003388; 
+    font-weight: 800; 
+    padding-left: 17px; 
+    padding-right: 17px; 
+    text-decoration: none; 
+    padding-bottom: 3px;
+}
 /* ============================================================
    SECTIUNI PRODUSE/SERVICII
    ============================================================ */
