@@ -299,7 +299,7 @@ h3 .h6 mb-2 {
 #form-text {
   font-size: 1.2rem;
   color: cyan;
-  text-shadow: .8px .8px .8px black;
+  text-shadow: .1px .1px .1px black;
 }
 
 .custom-input,
