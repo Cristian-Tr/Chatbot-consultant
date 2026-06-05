@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+
     const display = document.getElementById('display');
     const windowChat = document.getElementById('chat-window');
     const trigger = document.getElementById('chat-trigger');
@@ -10,89 +11,88 @@ document.addEventListener('DOMContentLoaded', function () {
     window.step = "start";
 
     window.onscroll = function () {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            let pb = document.getElementById("progress-bar");
-            if (pb) pb.style.width = scrolled + "%";
-        };
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
+        let pb = document.getElementById("progress-bar");
+        if (pb) pb.style.width = scrolled + "%";
+    };
 
     class TextScramble {
-    constructor(el) {
-      this.el = el
-      this.chars = '!<>-_\\/[]{}—=+*^?#________'
-      this.update = this.update.bind(this)
-    }
-    setText(newText) {
-      const oldText = this.el.innerText
-      const length = Math.max(oldText.length, newText.length)
-      const promise = new Promise((resolve) => this.resolve = resolve)
-      this.queue = []
-      for (let i = 0; i < length; i++) {
-        const from = oldText[i] || ''
-        const to = newText[i] || ''
-        const start = Math.floor(Math.random() * 40)
-        const end = start + Math.floor(Math.random() * 35)
-        this.queue.push({ from, to, start, end })
-      }
-      cancelAnimationFrame(this.frameRequest)
-      this.frame = 0
-      this.update()
-      return promise
-    }
-    update() {
-      let output = ''
-      let complete = 0
-      for (let i = 0, n = this.queue.length; i < n; i++) {
-        let { from, to, start, end, char } = this.queue[i]
-        if (this.frame >= end) {
-          complete++
-          output += to
-        } else if (this.frame >= start) {
-          if (!char || Math.random() < 0.28) {
-            char = this.randomChar()
-            this.queue[i].char = char
-          }
-          output += `<span class="chars">${char}</span>`
-        } else {
-          output += from
+        constructor(el) {
+            this.el = el
+            this.chars = '!<>-_\\/[]{}—=+*^?#________'
+            this.update = this.update.bind(this)
         }
-      }
-      this.el.innerHTML = output
-      if (complete === this.queue.length) {
-        this.resolve()
-      } else {
-        this.frameRequest = requestAnimationFrame(this.update)
-        this.frame++
-      }
+        setText(newText) {
+            const oldText = this.el.innerText
+            const length = Math.max(oldText.length, newText.length)
+            const promise = new Promise((resolve) => this.resolve = resolve)
+            this.queue = []
+            for (let i = 0; i < length; i++) {
+                const from = oldText[i] || ''
+                const to = newText[i] || ''
+                const start = Math.floor(Math.random() * 40)
+                const end = start + Math.floor(Math.random() * 35)
+                this.queue.push({ from, to, start, end })
+            }
+            cancelAnimationFrame(this.frameRequest)
+            this.frame = 0
+            this.update()
+            return promise
+        }
+        update() {
+            let output = ''
+            let complete = 0
+            for (let i = 0, n = this.queue.length; i < n; i++) {
+                let { from, to, start, end, char } = this.queue[i]
+                if (this.frame >= end) {
+                    complete++
+                    output += to
+                } else if (this.frame >= start) {
+                    if (!char || Math.random() < 0.28) {
+                        char = this.randomChar()
+                        this.queue[i].char = char
+                    }
+                    output += `<span class="chars">${char}</span>`
+                } else {
+                    output += from
+                }
+            }
+            this.el.innerHTML = output
+            if (complete === this.queue.length) {
+                this.resolve()
+            } else {
+                this.frameRequest = requestAnimationFrame(this.update)
+                this.frame++
+            }
+        }
+        randomChar() {
+            return this.chars[Math.floor(Math.random() * this.chars.length)]
+        }
     }
-    randomChar() {
-      return this.chars[Math.floor(Math.random() * this.chars.length)]
+
+    // MY ACTIVITIES - TEXTS
+
+    const phrases = [
+        'Vrei idei pentru proiect?',
+        'Alegem produsele dorite?',
+        'Ai nevoie de servicii?'
+    ]
+
+    const el = document.querySelector('.scrambleText')
+    const fx = new TextScramble(el)
+
+
+    let counter = 0
+    const next = () => {
+        fx.setText(phrases[counter]).then(() => {
+            setTimeout(next, 3500)
+        })
+        counter = (counter + 1) % phrases.length
     }
-  }
 
-  // MY ACTIVITIES - TEXTS
-
-  const phrases = [
-    'Bine ai venit!',
-    'Sunt consultant tehnic!',
-    'Te ajut să alegi produse?',
-    'Ai nevoie de servicii?'
-  ]
-
-  const el = document.querySelector('.scrambleText')
-  const fx = new TextScramble(el)
-
-
-  let counter = 0
-  const next = () => {
-    fx.setText(phrases[counter]).then(() => {
-      setTimeout(next, 3500)
-    })
-    counter = (counter + 1) % phrases.length
-  }
-
-  next()
+    next()
 
 
     // --- 1. SUNET LA CLICK BUTOANE ---
@@ -222,12 +222,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         else if (window.step === "services_step") {
             window.step = "ask_restart";
-           if (choiceLow === "caut altceva") {
+            if (choiceLow === "caut altceva") {
                 addBotMessage("<br> 🤝 <br> Îți mulțumim frumos pentru că ai vizitat website-ul nostru! <br> <br> ℹ️ <br> Dorești detalii pentru un alt proiect?", ["DA", "NU"]);
             }
-            else  {
+            else {
                 addBotMessage("📝 <br> Completează formularul de Contact pt. a primi info solicitate! <br> <br> ℹ️ <br> Dorești detalii pentru alt proiect?", ["DA", "NU"]);
-            } 
+            }
         }
         else if (window.step === "ask_restart") {
             if (choiceLow === "da") {
@@ -271,4 +271,6 @@ document.addEventListener('DOMContentLoaded', function () {
             window.processStep('NU');
         }
     };
+
+
 });
