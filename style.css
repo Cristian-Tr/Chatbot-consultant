@@ -487,11 +487,11 @@ footer ul li a:hover {
 }
 
 .btn-title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 800;
   text-shadow: .1px .1px .1px black;
   color: royalblue;
-  padding-bottom: 3px;
+  padding-bottom: 1px;
 }
 
 .text-animation {
